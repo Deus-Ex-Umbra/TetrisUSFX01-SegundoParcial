@@ -13,28 +13,30 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TETRISUSFX01_Piece_generated_h
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_SPARSE_DATA
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_RPC_WRAPPERS
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_RPC_WRAPPERS_NO_PURE_DECLS
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_INCLASS_NO_PURE_DECLS \
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_SPARSE_DATA
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_RPC_WRAPPERS
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_RPC_WRAPPERS_NO_PURE_DECLS
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPiece(); \
 	friend struct Z_Construct_UClass_APiece_Statics; \
 public: \
 	DECLARE_CLASS(APiece, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/TetrisUSFX01"), NO_API) \
-	DECLARE_SERIALIZER(APiece)
+	DECLARE_SERIALIZER(APiece) \
+	virtual UObject* _getUObject() const override { return const_cast<APiece*>(this); }
 
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_INCLASS \
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_INCLASS \
 private: \
 	static void StaticRegisterNativesAPiece(); \
 	friend struct Z_Construct_UClass_APiece_Statics; \
 public: \
 	DECLARE_CLASS(APiece, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/TetrisUSFX01"), NO_API) \
-	DECLARE_SERIALIZER(APiece)
+	DECLARE_SERIALIZER(APiece) \
+	virtual UObject* _getUObject() const override { return const_cast<APiece*>(this); }
 
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_STANDARD_CONSTRUCTORS \
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API APiece(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APiece) \
@@ -47,7 +49,7 @@ private: \
 public:
 
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_ENHANCED_CONSTRUCTORS \
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API APiece(APiece&&); \
@@ -58,28 +60,28 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(APiece)
 
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_PRIVATE_PROPERTY_OFFSET
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_13_PROLOG
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_GENERATED_BODY_LEGACY \
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_PRIVATE_PROPERTY_OFFSET
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_14_PROLOG
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_PRIVATE_PROPERTY_OFFSET \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_SPARSE_DATA \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_RPC_WRAPPERS \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_INCLASS \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_STANDARD_CONSTRUCTORS \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_PRIVATE_PROPERTY_OFFSET \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_SPARSE_DATA \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_RPC_WRAPPERS \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_INCLASS \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_GENERATED_BODY \
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_PRIVATE_PROPERTY_OFFSET \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_SPARSE_DATA \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_INCLASS_NO_PURE_DECLS \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_16_ENHANCED_CONSTRUCTORS \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_PRIVATE_PROPERTY_OFFSET \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_SPARSE_DATA \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_INCLASS_NO_PURE_DECLS \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Piece_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

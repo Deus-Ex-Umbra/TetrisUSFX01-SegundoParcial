@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "Piece.h"
+#include "Escenario.h"
 #include "Board.generated.h"
 
 UCLASS()
@@ -29,6 +30,7 @@ public:
 	//Aquí se crea el ABoard y sus punteros
 	UPROPERTY()
 	APiece* CurrentPiece;
+	APiece* NuevaPieza;
 	static ABoard* instancia; //Puntero a instancia (nullptr)
 	static ABoard* GetInstancia(); //Obtener instancia 
 	void Rotate(); 
@@ -40,16 +42,17 @@ public:
 	void MoveDownToEnd();
 	/*UPROPERTY()
 		AEscenarioFactory* EscenarioFabrica;*/
-	UPROPERTY()
-		class AEscenario* Escenario;
-	UPROPERTY()
-		class AEscenario* Escen;
 	void EstablecerCoolDown(float _CoolDown);
 	void EstablecerCoolLeft(float _CoolLeft);
 	float ObtenerCoolDown();
 	float ObtenerCoolLeft();
 	void EstablecerGameOver(bool _bGameOver);
 	bool ObtenerGameOver();
+	void SpawnearPiezas();
+	UPROPERTY()
+		AEscenario* Escenario;
+	UPROPERTY()
+		AEscenario* Escen;
 private:
 	enum PieceStatus { PS_NOT_INITED, PS_MOVING, PS_GOT_BOTTOM };
 	PieceStatus Status = PS_NOT_INITED;

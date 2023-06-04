@@ -18,7 +18,6 @@ void EmptyLinkFunctionForGeneratedCodeBoard() {}
 	ENGINE_API UClass* Z_Construct_UClass_APawn();
 	UPackage* Z_Construct_UPackage__Script_TetrisUSFX01();
 	TETRISUSFX01_API UClass* Z_Construct_UClass_APiece_NoRegister();
-	TETRISUSFX01_API UClass* Z_Construct_UClass_AEscenarioFactory_NoRegister();
 	TETRISUSFX01_API UClass* Z_Construct_UClass_AEscenario_NoRegister();
 // End Cross Module References
 	void ABoard::StaticRegisterNativesABoard()
@@ -38,10 +37,6 @@ void EmptyLinkFunctionForGeneratedCodeBoard() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CurrentPiece_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CurrentPiece;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EscenarioFabrica_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_EscenarioFabrica;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Escenario_MetaData[];
 #endif
@@ -74,12 +69,6 @@ void EmptyLinkFunctionForGeneratedCodeBoard() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABoard_Statics::NewProp_CurrentPiece = { "CurrentPiece", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABoard, CurrentPiece), Z_Construct_UClass_APiece_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABoard_Statics::NewProp_CurrentPiece_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABoard_Statics::NewProp_CurrentPiece_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABoard_Statics::NewProp_EscenarioFabrica_MetaData[] = {
-		{ "ModuleRelativePath", "Board.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABoard_Statics::NewProp_EscenarioFabrica = { "EscenarioFabrica", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABoard, EscenarioFabrica), Z_Construct_UClass_AEscenarioFactory_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABoard_Statics::NewProp_EscenarioFabrica_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABoard_Statics::NewProp_EscenarioFabrica_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABoard_Statics::NewProp_Escenario_MetaData[] = {
 		{ "ModuleRelativePath", "Board.h" },
 	};
@@ -93,7 +82,6 @@ void EmptyLinkFunctionForGeneratedCodeBoard() {}
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABoard_Statics::NewProp_Escen = { "Escen", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABoard, Escen), Z_Construct_UClass_AEscenario_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABoard_Statics::NewProp_Escen_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABoard_Statics::NewProp_Escen_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABoard_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_CurrentPiece,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_EscenarioFabrica,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_Escenario,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_Escen,
 	};
@@ -124,7 +112,7 @@ void EmptyLinkFunctionForGeneratedCodeBoard() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABoard, 1536821993);
+	IMPLEMENT_CLASS(ABoard, 3473299115);
 	template<> TETRISUSFX01_API UClass* StaticClass<ABoard>()
 	{
 		return ABoard::StaticClass();

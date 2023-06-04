@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Escenario.h"
 #include "EscenarioFactory.generated.h"
 
 UCLASS()
@@ -30,5 +29,5 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	AEscenario* FabricarEscenario(int _numeroescenario);
+	class AEscenario* FabricarEscenario(int _numeroescenario);
 };

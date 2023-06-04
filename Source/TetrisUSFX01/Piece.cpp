@@ -62,6 +62,16 @@ void APiece::Tick(float DeltaTime)
 
 }
 
+void APiece::EstablecerMovimiento(UActorComponent* movimiento)
+{
+	Movimiento = Cast<IMovimiento>(movimiento);
+}
+
+void APiece::SetIndice(int indice)
+{
+    Indice = indice;
+}
+
 void APiece::SpawnBlocks()
 {
     std::vector<std::vector<std::pair<float, float>>> Shapes =
@@ -75,7 +85,9 @@ void APiece::SpawnBlocks()
         {{-10.0, 0.0}, {0.0, 0.0}, {0.0, -10.0}, {10.0, -10.0}},
         /*{{-20.0, 10.0}, {-10.0, 0.0}, {0.0, 10.0}, {10.0, 0.0}},*/
     };
-    const int Index = FMath::RandRange(0, Shapes.size() - 1);
+    /*const int Index = FMath::RandRange(0, Shapes.size() - 1);
+    SetIndice(Index);*/
+    const int Index = getIndice();
     UE_LOG(LogTemp, Warning, TEXT("index=%d"), Index);
     const std::vector<std::pair<float, float>>& YZs = Shapes[Index];
     for (auto&& YZ : YZs)
@@ -90,7 +102,8 @@ void APiece::SpawnBlocks()
         else {
             B = GetWorld()->SpawnActor<ABlockDorado>(this->GetActorLocation(), Rotation);
         }
-        B->BlockMesh->SetMaterial(1, Colors[Index]);
+        const int IndexC = FMath::RandRange(0, Colors.Num() - 1);
+        B->BlockMesh->SetMaterial(1, Colors[IndexC]);
         Blocks.Add(B);
         B->AttachToActor(this, FAttachmentTransformRules::KeepRelativeTransform);
         B->SetActorRelativeLocation(FVector(0.0, YZ.first, YZ.second));
@@ -106,6 +119,11 @@ void APiece::EndPlay(const EEndPlayReason::Type EndPlayReason)
 //{
 //    Blocks.Empty();
 //}
+
+int APiece::getIndice()
+{
+    return Indice;
+}
 
 void APiece::DrawDebugLines()
 {
@@ -243,6 +261,20 @@ bool APiece::CheckWillCollision(std::function<FVector(FVector OldLocation)> Chan
     }
 
     return false;
+}
+
+void APiece::EliminarPieza()
+{
+    for (ABlock* B : Blocks)
+    {
+		B->Destroy();
+        B = nullptr;
+	}
+}
+
+void APiece::MoverAleatoriamente(float x, float y, float z, AActor* piece)
+{
+    Movimiento->MoverAleatoriamente(FMath::RandRange(-3, 3), FMath::RandRange(-3, 3), FMath::RandRange(-3, 3), piece);
 }
 
 

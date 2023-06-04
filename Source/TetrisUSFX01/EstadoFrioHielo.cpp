@@ -29,7 +29,7 @@ void AEstadoFrioHielo::Tick(float DeltaTime)
 void AEstadoFrioHielo::EstablecerMaterialEscenario(AEscenario* escenario)
 {
 	escenario->EscenarioMesh->SetMaterial(0, MaterialEscenario);
-	escenario->CambiarEstado(escenario->ObtenerEstadoalAzar());
+	Escenario->CambiarEstado(Escenario->ObtenerEstadoalAzar());
 }
 
 void AEstadoFrioHielo::EstablecerEscenario(AEscenario* escenario)

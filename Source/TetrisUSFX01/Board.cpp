@@ -9,6 +9,8 @@
 #include "EscenarioDeAgua.h"
 #include "EscenarioDeFuego.h"
 #include "EscenarioHielo.h"
+#include "EscenarioFactory.h"
+#include "AdaptadorMovimientoPieza.h"
 #include "Kismet/GameplayStatics.h"
 ABoard::ABoard()
 {
@@ -29,8 +31,16 @@ void ABoard::BeginPlay()
             it->Destroy();
         }
     }
+    /*IEstadodelEscenario* EstadoCalienteFuego = GetWorld()->SpawnActor<AEstadoCalienteFuego>(AEstadoCalienteFuego::StaticClass());
+    IEstadodelEscenario* EstadoFrioHielo = GetWorld()->SpawnActor<AEstadoFrioHielo>(AEstadoFrioHielo::StaticClass());
+    IEstadodelEscenario* EstadoNormalRoca = GetWorld()->SpawnActor<AEstadoNormalRoca>(AEstadoNormalRoca::StaticClass());*/
+    /*IEstadodelEscenario* EstadoTurbulentoAgua = GetWorld()->SpawnActor<AEstadoTurbulentoAgua>(AEstadoTurbulentoAgua::StaticClass());*/
+    AEscenarioFactory* EscenarioF = GetWorld()->SpawnActor<AEscenarioFactory>(AEscenarioFactory::StaticClass());
     Escenario = GetWorld()->SpawnActor<AEscenario>(AEscenario::StaticClass());
-    Escen = Escenario->Inicializar();
+    Escen = EscenarioF->FabricarEscenario(FMath::RandRange(1, 4));
+    /*Escenario = GetWorld()->SpawnActor<AEscenario>(AEscenario::StaticClass());
+    Escen = F*/
+    /*Escen = Escenario->Inicializar();*/
     ////Escenario = EscenarioFabrica->FabricarEscenario(1);
 }
 
@@ -57,7 +67,7 @@ void ABoard::Tick(float DeltaTime)
     switch (Status)
     {
     case PS_NOT_INITED:
-        NewPiece();
+        SpawnearPiezas();
         CoolLeft = CoolDown;
         Status = PS_MOVING;
         break;
@@ -69,6 +79,7 @@ void ABoard::Tick(float DeltaTime)
         }
         break;
     case PS_GOT_BOTTOM:
+        NuevaPieza->EliminarPieza();
         CoolLeft -= DeltaTime;
         if (CoolLeft <= 0.0f)
         {
@@ -149,15 +160,21 @@ void ABoard::MoveDown()
 void ABoard::NewPiece()
 {
     CheckLine();
-    if (CurrentPiece)
-    {
+    if (CurrentPiece) {
         CurrentPiece->Dismiss();
         CurrentPiece->Destroy();
     }
-
-    FVector Location(0.0, 5.0, 195.0);
-    FRotator Rotation(0.0, 0.0, 0.0);
-    CurrentPiece = GetWorld()->SpawnActor<APiece>(Location, Rotation);
+    int AntiguoIndice = NuevaPieza->getIndice();
+    CurrentPiece = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    CurrentPiece->SetIndice(AntiguoIndice);
+    CurrentPiece->SpawnBlocks();
+    if (NuevaPieza) {
+        NuevaPieza->Dismiss();
+        NuevaPieza->Destroy();
+    }
+    NuevaPieza = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 105.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    NuevaPieza->SetIndice(FMath::RandRange(0, 6));
+    NuevaPieza->SpawnBlocks();
     bGameOver = CheckGameOver();
     if (bGameOver)
     {
@@ -219,7 +236,7 @@ void ABoard::CheckLine()
             for (auto&& Result : OutOverlaps)
             {
                 Result.GetActor()->Destroy();
-                Escenario->CambiarEscenario(Escen);
+                /*Escenario->CambiarEscenario(Escen);*/
             }
             MoveDownFromLine(z);
 
@@ -289,6 +306,19 @@ void ABoard::EstablecerGameOver(bool _bGameOver)
 bool ABoard::ObtenerGameOver()
 {
     return true;
+}
+
+void ABoard::SpawnearPiezas()
+{
+    NuevaPieza = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 105.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    NuevaPieza->SetIndice(FMath::RandRange(0, 6));
+    NuevaPieza->SpawnBlocks();
+    UAdaptadorMovimientoPieza* Movimiento = NewObject<UAdaptadorMovimientoPieza>(NuevaPieza);
+    NuevaPieza->EstablecerMovimiento(Movimiento);
+    Movimiento->MoverAleatoriamente(FMath::RandRange(-4, 4), FMath::RandRange(-4, 4), FMath::RandRange(-4, 4), NuevaPieza);
+    CurrentPiece = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    CurrentPiece->SetIndice(FMath::RandRange(0, 6));
+    CurrentPiece->SpawnBlocks();
 }
 
 bool ABoard::CheckGameOver()

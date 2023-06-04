@@ -36,7 +36,7 @@ public: \
 
 #define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_ActorMovimiento_h_13_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API UActorMovimiento(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API UActorMovimiento(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UActorMovimiento) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UActorMovimiento); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UActorMovimiento); \
@@ -48,8 +48,6 @@ public:
 
 
 #define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_ActorMovimiento_h_13_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API UActorMovimiento(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UActorMovimiento(UActorMovimiento&&); \
@@ -57,7 +55,7 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UActorMovimiento); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UActorMovimiento); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UActorMovimiento)
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UActorMovimiento)
 
 
 #define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_ActorMovimiento_h_13_PRIVATE_PROPERTY_OFFSET

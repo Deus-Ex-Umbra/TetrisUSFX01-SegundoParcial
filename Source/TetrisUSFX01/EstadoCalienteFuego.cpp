@@ -29,7 +29,7 @@ void AEstadoCalienteFuego::Tick(float DeltaTime)
 void AEstadoCalienteFuego::EstablecerMaterialEscenario(AEscenario* escenario)
 {
 	escenario->EscenarioMesh->SetMaterial(0, MaterialEscenario);
-	escenario->CambiarEstado(escenario->ObtenerEstadoalAzar());
+	Escenario->CambiarEstado(Escenario->ObtenerEstadoalAzar());
 }
 
 void AEstadoCalienteFuego::EstablecerEscenario(AEscenario* escenario)

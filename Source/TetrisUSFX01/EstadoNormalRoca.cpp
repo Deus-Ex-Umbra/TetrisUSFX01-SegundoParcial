@@ -29,7 +29,7 @@ void AEstadoNormalRoca::Tick(float DeltaTime)
 void AEstadoNormalRoca::EstablecerMaterialEscenario(AEscenario* escenario)
 {
 	escenario->EscenarioMesh->SetMaterial(0, MaterialEscenario);
-	escenario->CambiarEstado(escenario->ObtenerEstadoalAzar());
+	Escenario->CambiarEstado(Escenario->ObtenerEstadoalAzar());
 }
 
 void AEstadoNormalRoca::EstablecerEscenario(AEscenario* escenario)

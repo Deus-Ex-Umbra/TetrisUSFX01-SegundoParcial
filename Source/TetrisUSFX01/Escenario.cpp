@@ -2,12 +2,11 @@
 
 
 #include "Escenario.h"
-#include "EscenarioFactory.h"
-#include "EstadodelEscenario.h"
+#include "EstadoNormalRoca.h"
 #include "EstadoCalienteFuego.h"
 #include "EstadoFrioHielo.h"
-#include "EstadoNormalRoca.h"
 #include "EstadoTurbulentoAgua.h"
+#include "EscenarioFactory.h"
 // Sets default values
 AEscenario::AEscenario()
 {
@@ -23,7 +22,7 @@ void AEscenario::BeginPlay()
 
 AEscenario* AEscenario::Inicializar()
 {
-	EstadoCalienteFuego = GetWorld()->SpawnActor<AEstadoCalienteFuego>(AEstadoCalienteFuego::StaticClass());
+	/*EstadoCalienteFuego = GetWorld()->SpawnActor<AEstadoCalienteFuego>(AEstadoCalienteFuego::StaticClass());
 	EstadoCalienteFuego->EstablecerEscenario(this);
 	EstadoFrioHielo = GetWorld()->SpawnActor<AEstadoFrioHielo>(AEstadoFrioHielo::StaticClass());
 	EstadoFrioHielo->EstablecerEscenario(this);
@@ -31,10 +30,11 @@ AEscenario* AEscenario::Inicializar()
 	EstadoNormalRoca->EstablecerEscenario(this);
 	EstadoTurbulentoAgua = GetWorld()->SpawnActor<AEstadoTurbulentoAgua>(AEstadoTurbulentoAgua::StaticClass());
 	EstadoTurbulentoAgua->EstablecerEscenario(this);
-	EstadoPrincipal = ObtenerEstadoalAzar();
-	AEscenarioFactory* EscenarioFabrica = GetWorld()->SpawnActor<AEscenarioFactory>(AEscenarioFactory::StaticClass());
+	EstadoPrincipal = ObtenerEstadoalAzar();*/
+	/*AEscenarioFactory* EscenarioFabrica = GetWorld()->SpawnActor<AEscenarioFactory>(AEscenarioFactory::StaticClass());
 	AEscenario* Escena = EscenarioFabrica->FabricarEscenario(FMath::RandRange(1, 4));
-	return Escena;
+	return Escena;*/
+	return nullptr;
 }
 // Called every frame
 void AEscenario::Tick(float DeltaTime)
@@ -54,17 +54,17 @@ void AEscenario::CambiarEstado(IEstadodelEscenario* _estado)
 
 IEstadodelEscenario* AEscenario::ObtenerEstadoalAzar()
 {
-	switch (FMath::RandRange(1, 4)) {
-	case 1:
+	/*switch (FMath::RandRange(1, 4)) {*/
+	/*case 1:
 		return EstadoCalienteFuego;
 	case 2:
 		return EstadoFrioHielo;
 	case 3:
 		return EstadoNormalRoca;
 	case 4:
-		return EstadoTurbulentoAgua;
-	default:
+		return EstadoTurbulentoAgua;*/
+	/*default:*/
 		return nullptr;
-	}
+	/*}*/
 }
 

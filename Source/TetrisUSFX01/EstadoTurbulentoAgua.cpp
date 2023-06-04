@@ -29,7 +29,7 @@ void AEstadoTurbulentoAgua::Tick(float DeltaTime)
 void AEstadoTurbulentoAgua::EstablecerMaterialEscenario(AEscenario* escenario)
 {
 	escenario->EscenarioMesh->SetMaterial(0, MaterialEscenario);
-	escenario->CambiarEstado(escenario->ObtenerEstadoalAzar());
+	Escenario->CambiarEstado(Escenario->ObtenerEstadoalAzar());
 }
 
 void AEstadoTurbulentoAgua::EstablecerEscenario(AEscenario* escenario)
