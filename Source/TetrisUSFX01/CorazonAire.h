@@ -7,11 +7,14 @@
 #include "BuilderVida.h"
 #include "Block.h"
 #include "BlockAire.h"
+#include "BlockHelado.h"
 #include <vector>
+#include "Corazon.h"
+#include "Movimiento.h"
 #include "CorazonAire.generated.h"
 
 UCLASS()
-class TETRISUSFX01_API ACorazonAire : public AActor, public IBuilderVida
+class TETRISUSFX01_API ACorazonAire : public AActor, public IBuilderVida, public ICorazon, public IMovimiento
 {
 	GENERATED_BODY()
 	
@@ -29,8 +32,15 @@ public:
 	virtual class ACorazonVida* ObtenerCorazonVida() override;
 	//virtual void CrearBlock() override;
 	virtual void CrearVida() override;
+	virtual void MoverAzar(float x, float y, float z) override;
+	virtual void Colorear(UMaterialInterface* Material) override;
+	virtual void MovimientoAzar(float x, float y, float z) override;
+	void EstablecerMovimiento(AActor* _Movimiento);
 private:
 	TArray<ABlock*> blocks;
 	UPROPERTY()
 		class ACorazonVida* Vida;
+	UPROPERTY()
+		class USceneComponent* SceneComponent;
+	IMovimiento* Movimiento;
 };

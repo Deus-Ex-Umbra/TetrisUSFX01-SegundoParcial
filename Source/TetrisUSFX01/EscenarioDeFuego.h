@@ -16,11 +16,15 @@ protected:
 public:
 	virtual void Tick(float DeltaTime) override;
 	virtual void CrearEscenario();
+	void Inicializar();
 	//virtual AEscenario* ObtenerEscenario(AEscenario* escenario);
 	//virtual void MostrarInformacion();
 private:
-	UPROPERTY(VisibleAnywhere, Category = "Director")
-	class ADirectorVida* Director;
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere, Category = "Principal")
+		class ADirectorVida* Director;
+	UPROPERTY(VisibleAnywhere, Category = "Principal")
 		class ACorazonFuego* CorazonFuego;
+	UPROPERTY(VisibleAnywhere, Category = "Principal")
+		class ACorazonVida* Corazon;
+	float Tiempo;
 };

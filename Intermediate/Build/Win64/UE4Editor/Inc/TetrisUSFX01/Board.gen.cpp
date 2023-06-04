@@ -19,6 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeBoard() {}
 	UPackage* Z_Construct_UPackage__Script_TetrisUSFX01();
 	TETRISUSFX01_API UClass* Z_Construct_UClass_APiece_NoRegister();
 	TETRISUSFX01_API UClass* Z_Construct_UClass_AEscenario_NoRegister();
+	TETRISUSFX01_API UClass* Z_Construct_UClass_AEscenarioFactory_NoRegister();
 // End Cross Module References
 	void ABoard::StaticRegisterNativesABoard()
 	{
@@ -45,6 +46,10 @@ void EmptyLinkFunctionForGeneratedCodeBoard() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Escen_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Escen;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FabricadeEscenario_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FabricadeEscenario;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -80,10 +85,17 @@ void EmptyLinkFunctionForGeneratedCodeBoard() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABoard_Statics::NewProp_Escen = { "Escen", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABoard, Escen), Z_Construct_UClass_AEscenario_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABoard_Statics::NewProp_Escen_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABoard_Statics::NewProp_Escen_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABoard_Statics::NewProp_FabricadeEscenario_MetaData[] = {
+		{ "ModuleRelativePath", "Board.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABoard_Statics::NewProp_FabricadeEscenario = { "FabricadeEscenario", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABoard, FabricadeEscenario), Z_Construct_UClass_AEscenarioFactory_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABoard_Statics::NewProp_FabricadeEscenario_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABoard_Statics::NewProp_FabricadeEscenario_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABoard_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_CurrentPiece,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_Escenario,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_Escen,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_FabricadeEscenario,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABoard_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABoard>::IsAbstract,
@@ -112,7 +124,7 @@ void EmptyLinkFunctionForGeneratedCodeBoard() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABoard, 3473299115);
+	IMPLEMENT_CLASS(ABoard, 2846386924);
 	template<> TETRISUSFX01_API UClass* StaticClass<ABoard>()
 	{
 		return ABoard::StaticClass();

@@ -60,7 +60,8 @@ public: \
 
 #define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_EscenarioDeAgua_h_15_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__Director() { return STRUCT_OFFSET(AEscenarioDeAgua, Director); } \
-	FORCEINLINE static uint32 __PPO__CorazonAire() { return STRUCT_OFFSET(AEscenarioDeAgua, CorazonAire); }
+	FORCEINLINE static uint32 __PPO__CorazonAire() { return STRUCT_OFFSET(AEscenarioDeAgua, CorazonAire); } \
+	FORCEINLINE static uint32 __PPO__Corazon() { return STRUCT_OFFSET(AEscenarioDeAgua, Corazon); }
 
 
 #define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_EscenarioDeAgua_h_12_PROLOG

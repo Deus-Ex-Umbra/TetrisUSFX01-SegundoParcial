@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "BuilderVida.h"
 #include "DirectorVida.generated.h"
 
 UCLASS()
@@ -23,9 +22,9 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	void EstablecerBuilderVida(IBuilderVida* newBuilderVida);
+	void EstablecerBuilderVida(AActor* newBuilderVida);
 	void ConstruirVida();
 	class ACorazonVida* ObtenerVida();
 private:
-	IBuilderVida* BuilderVida;
+	class IBuilderVida* BuilderVida;
 };

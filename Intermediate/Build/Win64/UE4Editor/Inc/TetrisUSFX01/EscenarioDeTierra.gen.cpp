@@ -19,6 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioDeTierra() {}
 	UPackage* Z_Construct_UPackage__Script_TetrisUSFX01();
 	TETRISUSFX01_API UClass* Z_Construct_UClass_ADirectorVida_NoRegister();
 	TETRISUSFX01_API UClass* Z_Construct_UClass_ACorazonFuego_NoRegister();
+	TETRISUSFX01_API UClass* Z_Construct_UClass_ACorazonVida_NoRegister();
 // End Cross Module References
 	void AEscenarioDeTierra::StaticRegisterNativesAEscenarioDeTierra()
 	{
@@ -41,6 +42,10 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioDeTierra() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CorazonFuego_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CorazonFuego;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Corazon_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Corazon;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -58,20 +63,29 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioDeTierra() {}
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_Director_MetaData[] = {
-		{ "Category", "Director" },
+		{ "Category", "Principal" },
 		{ "ModuleRelativePath", "EscenarioDeTierra.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_Director = { "Director", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEscenarioDeTierra, Director), Z_Construct_UClass_ADirectorVida_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_Director_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_Director_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_CorazonFuego_MetaData[] = {
+		{ "Category", "Principal" },
 		{ "ModuleRelativePath", "EscenarioDeTierra.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_CorazonFuego = { "CorazonFuego", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEscenarioDeTierra, CorazonFuego), Z_Construct_UClass_ACorazonFuego_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_CorazonFuego_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_CorazonFuego_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_CorazonFuego = { "CorazonFuego", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEscenarioDeTierra, CorazonFuego), Z_Construct_UClass_ACorazonFuego_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_CorazonFuego_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_CorazonFuego_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_Corazon_MetaData[] = {
+		{ "Category", "Principal" },
+		{ "ModuleRelativePath", "EscenarioDeTierra.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_Corazon = { "Corazon", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEscenarioDeTierra, Corazon), Z_Construct_UClass_ACorazonVida_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_Corazon_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_Corazon_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEscenarioDeTierra_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_Director,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_CorazonFuego,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEscenarioDeTierra_Statics::NewProp_Corazon,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AEscenarioDeTierra_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AEscenarioDeTierra>::IsAbstract,
@@ -100,7 +114,7 @@ void EmptyLinkFunctionForGeneratedCodeEscenarioDeTierra() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEscenarioDeTierra, 2143781753);
+	IMPLEMENT_CLASS(AEscenarioDeTierra, 221000402);
 	template<> TETRISUSFX01_API UClass* StaticClass<AEscenarioDeTierra>()
 	{
 		return AEscenarioDeTierra::StaticClass();

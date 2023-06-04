@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "EstadodelEscenario.h"
 #include "Escenario.generated.h"
 
 UCLASS(Abstract)
@@ -14,28 +15,32 @@ public:
 		class UStaticMeshComponent* EscenarioMesh;
 	UPROPERTY()
 		class UStaticMeshComponent* LimitePiezasMesh;
-private:
+	UPROPERTY()
+		class UMaterialInterface* EscenarioMaterial;
+	UPROPERTY()
+		class UMaterialInterface* LimitePiezasMaterial;
+	UPROPERTY()
+		class AEscenarioFactory* EscenarioF;
+protected:
 	class IEstadodelEscenario* EstadoPrincipal;
 	class IEstadodelEscenario* EstadoCalienteFuego;
 	class IEstadodelEscenario* EstadoFrioHielo;
 	class IEstadodelEscenario* EstadoNormalRoca;
 	class IEstadodelEscenario* EstadoTurbulentoAgua;
-protected:
 	virtual void BeginPlay() override;
-	UPROPERTY()
-		class UMaterialInterface* EscenarioMaterial;
-	UPROPERTY()
-		class UMaterialInterface* LimitePiezasMaterial;
 	int NumeroEscenario;
 public:	
-	AEscenario* Inicializar();
+	//AEscenario* Inicializar();
 	//AEscenario* EscenarioP;
 	virtual void Tick(float DeltaTime) override;
 	void CrearEscenario() PURE_VIRTUAL(AEscenario::CrearEscenario, );
+	AEscenario* Inicializar();
 	/*static AEscenario* ObtenerEscenario(int _numeroEscenario);*/
 	void CambiarEscenario(AEscenario* _escenario);
 	void CambiarEstado(IEstadodelEscenario* _estado);
 	IEstadodelEscenario* ObtenerEstadoalAzar();
+	void EstablecerNumeroEstado(IEstadodelEscenario* _estado);
+	int ObtenerEstado();
 	/*void MostrarInformacion() PURE_VIRTUAL(AEscenario::MostrarInformacion, );*/
 	//AEscenario* ObtenerEscenario(AEscenario* escenario) PURE_VIRTUAL(AEscenario::ObrenerEscenario, return nullptr;)
 };

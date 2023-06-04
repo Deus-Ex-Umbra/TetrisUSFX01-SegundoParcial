@@ -11,6 +11,10 @@
 #include "EscenarioHielo.h"
 #include "EscenarioFactory.h"
 #include "Kismet/GameplayStatics.h"
+#include "DirectorVida.h"
+#include "CorazonVida.h"
+#include "CorazonFuego.h"
+#include "CorazonAire.h"
 ABoard::ABoard()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -31,16 +35,13 @@ void ABoard::BeginPlay()
             it->Destroy();
         }
     }
-    /*IEstadodelEscenario* EstadoCalienteFuego = GetWorld()->SpawnActor<AEstadoCalienteFuego>(AEstadoCalienteFuego::StaticClass());
-    IEstadodelEscenario* EstadoFrioHielo = GetWorld()->SpawnActor<AEstadoFrioHielo>(AEstadoFrioHielo::StaticClass());
-    IEstadodelEscenario* EstadoNormalRoca = GetWorld()->SpawnActor<AEstadoNormalRoca>(AEstadoNormalRoca::StaticClass());*/
-    /*IEstadodelEscenario* EstadoTurbulentoAgua = GetWorld()->SpawnActor<AEstadoTurbulentoAgua>(AEstadoTurbulentoAgua::StaticClass());*/
-    AEscenarioFactory* EscenarioF = GetWorld()->SpawnActor<AEscenarioFactory>(AEscenarioFactory::StaticClass());
-    Escenario = GetWorld()->SpawnActor<AEscenario>(AEscenario::StaticClass());
-    Escen = EscenarioF->FabricarEscenario(FMath::RandRange(1, 4));
+    FabricadeEscenario = GetWorld()->SpawnActor<AEscenarioFactory>(AEscenarioFactory::StaticClass());
+    Escenario = FabricadeEscenario->FabricarEscenario(FMath::RandRange(1, 4));
+    Escen = Escenario->Inicializar();
+    /*Escen = EscenarioF->FabricarEscenario(FMath::RandRange(1, 4));*/
     /*Escenario = GetWorld()->SpawnActor<AEscenario>(AEscenario::StaticClass());
     Escen = F*/
-    Escen = Escenario->Inicializar();
+    /*Escen = Escenario->Inicializar();*/
     ////Escenario = EscenarioFabrica->FabricarEscenario(1);
 }
 
@@ -68,12 +69,13 @@ void ABoard::Tick(float DeltaTime)
     {
     case PS_NOT_INITED:
         SpawnearPiezas();
-        CoolLeft = CoolDown;
+        EstablecerCoolLeft(CoolDown);
         Status = PS_MOVING;
         break;
     case PS_MOVING:
-        CoolLeft -= DeltaTime;
-        if (CoolLeft <= 0.0f)
+        /*CoolLeft -= DeltaTime;*/
+        EstablecerCoolLeft(ObtenerCoolLeft() - DeltaTime);
+        if (ObtenerCoolLeft() <= 0.0f)
         {
             MoveDown();
         }
@@ -82,7 +84,8 @@ void ABoard::Tick(float DeltaTime)
         /*NuevaPieza->Dismiss();
         NuevaPieza->Destroy();*/
         NuevaPieza->EliminarPieza();
-        CoolLeft -= DeltaTime;
+        /*CoolLeft -= DeltaTime;*/
+        EstablecerCoolLeft(ObtenerCoolLeft() - DeltaTime);
         if (CoolLeft <= 0.0f)
         {
             if (CurrentPiece)
@@ -93,6 +96,7 @@ void ABoard::Tick(float DeltaTime)
             CurrentPiece = nullptr;
             NewPiece();
             CoolLeft = CoolDown;
+            EstablecerCoolLeft(CoolDown);
             Status = PS_MOVING;
         }
         break;
@@ -238,7 +242,21 @@ void ABoard::CheckLine()
             for (auto&& Result : OutOverlaps)
             {
                 Result.GetActor()->Destroy();
-                /*Escenario->CambiarEscenario(Escen);*/
+                Escenario->CambiarEscenario(Escen);
+                switch (Escenario->ObtenerEstado()) {
+                case 1: 
+                    EstablecerCoolDown(0.2);
+                    EstablecerCoolLeft(0.2);
+                case 2:
+                    EstablecerCoolDown(0.7);
+                    EstablecerCoolLeft(0.7);
+                case 3:
+                    EstablecerCoolDown(0.5);
+                    EstablecerCoolLeft(0.5);
+                case 4:
+                    EstablecerCoolDown(FMath::RandRange(1, 10) * 0.1);
+                    EstablecerCoolLeft(FMath::RandRange(1, 10) * 0.1);
+                }
             }
             MoveDownFromLine(z);
 

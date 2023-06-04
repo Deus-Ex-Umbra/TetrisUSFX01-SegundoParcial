@@ -53,6 +53,8 @@ public:
 		AEscenario* Escenario;
 	UPROPERTY()
 		AEscenario* Escen;
+	UPROPERTY()
+		AEscenarioFactory* FabricadeEscenario;
 private:
 	enum PieceStatus { PS_NOT_INITED, PS_MOVING, PS_GOT_BOTTOM };
 	PieceStatus Status = PS_NOT_INITED;

@@ -3,8 +3,15 @@
 
 #include "EscenarioDeAgua.h"
 #include "DirectorVida.h"
+#include "BuilderVida.h"
 #include "CorazonAire.h"
 #include "CorazonVida.h"
+#include "EstadodelEscenario.h"
+#include "EstadoNormalRoca.h"
+#include "EstadoCalienteFuego.h"
+#include "EstadoFrioHielo.h"
+#include "AdaptadorCorazonMovimiento.h"
+#include "EstadoTurbulentoAgua.h"
 
 AEscenarioDeAgua::AEscenarioDeAgua()
 {
@@ -28,28 +35,51 @@ AEscenarioDeAgua::AEscenarioDeAgua()
 	}
 	EscenarioMaterial = LoadObject<UMaterialInterface>(nullptr, TEXT("Material'/Game/Mesh/EscenarioAgua_Mat.EscenarioAgua_Mat'"));
 	LimitePiezasMaterial = LoadObject<UMaterialInterface>(nullptr, TEXT("Material'/Game/StarterContent/Materials/M_Water_Ocean.M_Water_Ocean'"));
+	Tiempo = 0.0f;
 }
 
 void AEscenarioDeAgua::BeginPlay()
 {
 	Super::BeginPlay();
-	CrearEscenario();
+	AAdaptadorCorazonMovimiento* Adaptador = GetWorld()->SpawnActor<AAdaptadorCorazonMovimiento>(AAdaptadorCorazonMovimiento::StaticClass());
+	CorazonAire = GetWorld()->SpawnActor<ACorazonAire>(FVector(0.0f, -150.0f, 75.0f), FRotator(0.0f, 0.0f, 0.0f));
+	CorazonAire->EstablecerMovimiento(Adaptador);
 	Director = GetWorld()->SpawnActor<ADirectorVida>(ADirectorVida::StaticClass());
-	CorazonAire = GetWorld()->SpawnActor<ACorazonAire>(ACorazonAire::StaticClass());
-	Director->EstablecerBuilderVida(CorazonAire);
-	Director->ConstruirVida();
-	ACorazonVida* Corazon = Director->ObtenerVida();
+	CrearEscenario();
+	CorazonAire->Colorear(LimitePiezasMaterial);
+	Inicializar();
 }
 
 void AEscenarioDeAgua::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if(Tiempo >= 0.5f)
+	{
+		CorazonAire->MoverAzar(FMath::RandRange(1, 3), FMath::RandRange(1, 3), FMath::RandRange(1, 3));
+		Tiempo = 0.0f;
+	}
+	Tiempo += DeltaTime;
 }
 
 void AEscenarioDeAgua::CrearEscenario()
 {
 	EscenarioMesh->SetMaterial(0, EscenarioMaterial);
 	LimitePiezasMesh->SetMaterial(0, LimitePiezasMaterial);
+	Director->EstablecerBuilderVida(CorazonAire);
+	Director->ConstruirVida();
+}
+
+void AEscenarioDeAgua::Inicializar()
+{
+	EstadoCalienteFuego = GetWorld()->SpawnActor<AEstadoCalienteFuego>(AEstadoCalienteFuego::StaticClass());
+	EstadoCalienteFuego->EstablecerEscenario(this);
+	EstadoFrioHielo = GetWorld()->SpawnActor<AEstadoFrioHielo>(AEstadoFrioHielo::StaticClass());
+	EstadoFrioHielo->EstablecerEscenario(this);
+	EstadoNormalRoca = GetWorld()->SpawnActor<AEstadoNormalRoca>(AEstadoNormalRoca::StaticClass());
+	EstadoNormalRoca->EstablecerEscenario(this);
+	EstadoTurbulentoAgua = GetWorld()->SpawnActor<AEstadoTurbulentoAgua>(AEstadoTurbulentoAgua::StaticClass());
+	EstadoTurbulentoAgua->EstablecerEscenario(this);
+	EstadoPrincipal = EstadoNormalRoca;
 }
 
 //AEscenario* AEscenarioDeAgua::ObtenerEscenario(AEscenario* escenario)

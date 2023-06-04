@@ -18,7 +18,10 @@ void EmptyLinkFunctionForGeneratedCodeCorazonFuego() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_TetrisUSFX01();
 	TETRISUSFX01_API UClass* Z_Construct_UClass_ACorazonVida_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	TETRISUSFX01_API UClass* Z_Construct_UClass_UBuilderVida_NoRegister();
+	TETRISUSFX01_API UClass* Z_Construct_UClass_UCorazon_NoRegister();
+	TETRISUSFX01_API UClass* Z_Construct_UClass_UMovimiento_NoRegister();
 // End Cross Module References
 	void ACorazonFuego::StaticRegisterNativesACorazonFuego()
 	{
@@ -37,6 +40,10 @@ void EmptyLinkFunctionForGeneratedCodeCorazonFuego() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Vida_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Vida;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SceneComponent_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SceneComponent;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
@@ -58,11 +65,21 @@ void EmptyLinkFunctionForGeneratedCodeCorazonFuego() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACorazonFuego_Statics::NewProp_Vida = { "Vida", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACorazonFuego, Vida), Z_Construct_UClass_ACorazonVida_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACorazonFuego_Statics::NewProp_Vida_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACorazonFuego_Statics::NewProp_Vida_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACorazonFuego_Statics::NewProp_SceneComponent_MetaData[] = {
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "CorazonFuego.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACorazonFuego_Statics::NewProp_SceneComponent = { "SceneComponent", nullptr, (EPropertyFlags)0x0040000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACorazonFuego, SceneComponent), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACorazonFuego_Statics::NewProp_SceneComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACorazonFuego_Statics::NewProp_SceneComponent_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACorazonFuego_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACorazonFuego_Statics::NewProp_Vida,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACorazonFuego_Statics::NewProp_SceneComponent,
 	};
 		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ACorazonFuego_Statics::InterfaceParams[] = {
 			{ Z_Construct_UClass_UBuilderVida_NoRegister, (int32)VTABLE_OFFSET(ACorazonFuego, IBuilderVida), false },
+			{ Z_Construct_UClass_UCorazon_NoRegister, (int32)VTABLE_OFFSET(ACorazonFuego, ICorazon), false },
+			{ Z_Construct_UClass_UMovimiento_NoRegister, (int32)VTABLE_OFFSET(ACorazonFuego, IMovimiento), false },
 		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACorazonFuego_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACorazonFuego>::IsAbstract,
@@ -91,7 +108,7 @@ void EmptyLinkFunctionForGeneratedCodeCorazonFuego() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACorazonFuego, 1307867661);
+	IMPLEMENT_CLASS(ACorazonFuego, 2170481316);
 	template<> TETRISUSFX01_API UClass* StaticClass<ACorazonFuego>()
 	{
 		return ACorazonFuego::StaticClass();

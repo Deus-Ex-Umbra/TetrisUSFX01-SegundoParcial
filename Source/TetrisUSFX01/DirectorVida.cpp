@@ -2,7 +2,7 @@
 
 
 #include "DirectorVida.h"
-
+#include "BuilderVida.h"
 // Sets default values
 ADirectorVida::ADirectorVida()
 {
@@ -25,9 +25,9 @@ void ADirectorVida::Tick(float DeltaTime)
 
 }
 
-void ADirectorVida::EstablecerBuilderVida(IBuilderVida* newBuilderVida)
+void ADirectorVida::EstablecerBuilderVida(AActor* newBuilderVida)
 {
-	BuilderVida = newBuilderVida;
+	BuilderVida = Cast<IBuilderVida>(newBuilderVida);
 }
 
 void ADirectorVida::ConstruirVida()
