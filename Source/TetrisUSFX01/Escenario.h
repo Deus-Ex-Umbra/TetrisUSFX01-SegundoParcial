@@ -2,7 +2,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "EstadodelEscenario.h"
 #include "Escenario.generated.h"
 
 UCLASS(Abstract)
@@ -16,11 +15,11 @@ public:
 	UPROPERTY()
 		class UStaticMeshComponent* LimitePiezasMesh;
 private:
-	IEstadodelEscenario* EstadoPrincipal;
-	IEstadodelEscenario* EstadoCalienteFuego;
-	IEstadodelEscenario* EstadoFrioHielo;
-	IEstadodelEscenario* EstadoNormalRoca;
-	IEstadodelEscenario* EstadoTurbulentoAgua;
+	class IEstadodelEscenario* EstadoPrincipal;
+	class IEstadodelEscenario* EstadoCalienteFuego;
+	class IEstadodelEscenario* EstadoFrioHielo;
+	class IEstadodelEscenario* EstadoNormalRoca;
+	class IEstadodelEscenario* EstadoTurbulentoAgua;
 protected:
 	virtual void BeginPlay() override;
 	UPROPERTY()

@@ -2,6 +2,9 @@
 
 
 #include "EscenarioDeTierra.h"
+#include "DirectorVida.h"
+#include "CorazonVida.h"
+#include "CorazonFuego.h"
 
 AEscenarioDeTierra::AEscenarioDeTierra()
 {
@@ -30,6 +33,11 @@ void AEscenarioDeTierra::BeginPlay()
 {
 	Super::BeginPlay();
 	CrearEscenario();
+	Director = GetWorld()->SpawnActor<ADirectorVida>(ADirectorVida::StaticClass());
+	CorazonFuego = GetWorld()->SpawnActor<ACorazonFuego>(ACorazonFuego::StaticClass());
+	Director->EstablecerBuilderVida(CorazonFuego);
+	Director->ConstruirVida();
+	ACorazonVida* Corazon = Director->ObtenerVida();
 }
 
 void AEscenarioDeTierra::Tick(float DeltaTime)

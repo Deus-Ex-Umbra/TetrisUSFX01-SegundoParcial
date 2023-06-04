@@ -10,12 +10,12 @@
 #include "EscenarioDeFuego.h"
 #include "EscenarioHielo.h"
 #include "EscenarioFactory.h"
-#include "AdaptadorMovimientoPieza.h"
 #include "Kismet/GameplayStatics.h"
 ABoard::ABoard()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+    tiempo = 0.0f;
 }
 
 // Called when the game starts or when spawned
@@ -40,7 +40,7 @@ void ABoard::BeginPlay()
     Escen = EscenarioF->FabricarEscenario(FMath::RandRange(1, 4));
     /*Escenario = GetWorld()->SpawnActor<AEscenario>(AEscenario::StaticClass());
     Escen = F*/
-    /*Escen = Escenario->Inicializar();*/
+    Escen = Escenario->Inicializar();
     ////Escenario = EscenarioFabrica->FabricarEscenario(1);
 }
 
@@ -79,6 +79,8 @@ void ABoard::Tick(float DeltaTime)
         }
         break;
     case PS_GOT_BOTTOM:
+        /*NuevaPieza->Dismiss();
+        NuevaPieza->Destroy();*/
         NuevaPieza->EliminarPieza();
         CoolLeft -= DeltaTime;
         if (CoolLeft <= 0.0f)
@@ -308,14 +310,25 @@ bool ABoard::ObtenerGameOver()
     return true;
 }
 
+//void ABoard::SpawnearPiezas()
+//{
+//    UAdaptadorMovimientoPieza* Movimiento = NewObject<UAdaptadorMovimientoPieza>(this);
+//    NuevaPieza = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 105.0f, 175.0f), FRotator(0.0f, 0.0f, 0.0f), );
+//    NuevaPieza->SetIndice(FMath::RandRange(0, 6));
+//    NuevaPieza->SpawnBlocks();
+//    NuevaPieza->EstablecerMovimiento(Movimiento);
+//    NuevaPieza->MoverAleatoriamente(FMath::RandRange(-3, 3), FMath::RandRange(-3, 3), FMath::RandRange(-3, 3), this);
+//   /* Movimiento->MoverAleatoriamente(FMath::RandRange(-4, 4), FMath::RandRange(-4, 4), FMath::RandRange(-4, 4), NuevaPieza);*/
+//    CurrentPiece = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+//    CurrentPiece->SetIndice(FMath::RandRange(0, 6));
+//    CurrentPiece->SpawnBlocks();
+//}
+
 void ABoard::SpawnearPiezas()
 {
     NuevaPieza = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 105.0f, 175.0f), FRotator(0.0f, 0.0f, 0.0f));
     NuevaPieza->SetIndice(FMath::RandRange(0, 6));
     NuevaPieza->SpawnBlocks();
-    UAdaptadorMovimientoPieza* Movimiento = NewObject<UAdaptadorMovimientoPieza>(NuevaPieza);
-    NuevaPieza->EstablecerMovimiento(Movimiento);
-    Movimiento->MoverAleatoriamente(FMath::RandRange(-4, 4), FMath::RandRange(-4, 4), FMath::RandRange(-4, 4), NuevaPieza);
     CurrentPiece = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
     CurrentPiece->SetIndice(FMath::RandRange(0, 6));
     CurrentPiece->SpawnBlocks();

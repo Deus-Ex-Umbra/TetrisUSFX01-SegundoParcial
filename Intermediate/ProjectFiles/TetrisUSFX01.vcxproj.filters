@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\TetrisUSFX01.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{AE9F229F-25B6-4C2E-B1EC-11010607AA27}</UniqueIdentifier>
+      <UniqueIdentifier>{4115800A-E1EF-45FE-999F-EBEA80C966B2}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\TetrisUSFX01.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\README.md" />
     <Filter Include="Config">
-      <UniqueIdentifier>{96532E53-A0AF-4845-B8E3-5B2CBED188FC}</UniqueIdentifier>
+      <UniqueIdentifier>{CFD36711-ECD9-422B-A9F4-AB45BCE40DC8}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,24 +30,18 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\TetrisUSFX01">
-      <UniqueIdentifier>{333A43C4-481E-49E4-B8F4-9E7998E70E3A}</UniqueIdentifier>
+      <UniqueIdentifier>{E76DD227-7DE5-4ACF-8975-0B7833DE422C}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\TetrisUSFX01\ActorMovimiento.cpp">
-      <Filter>Source\TetrisUSFX01</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\TetrisUSFX01\ActorMovimiento.h">
-      <Filter>Source\TetrisUSFX01</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\TetrisUSFX01\AdaptadorMovimientoPieza.cpp">
-      <Filter>Source\TetrisUSFX01</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\TetrisUSFX01\AdaptadorMovimientoPieza.h">
-      <Filter>Source\TetrisUSFX01</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\TetrisUSFX01\Block.cpp">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\TetrisUSFX01\Block.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\BlockAire.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\BlockAire.h">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\TetrisUSFX01\BlockBrilloso.cpp">
@@ -62,10 +56,46 @@
     <ClInclude Include="..\..\Source\TetrisUSFX01\BlockDorado.h">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\BlockFuego.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\BlockFuego.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\TetrisUSFX01\Board.cpp">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\TetrisUSFX01\Board.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\BuilderVida.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\BuilderVida.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\CorazonAire.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\CorazonAire.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\CorazonFuego.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\CorazonFuego.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\CorazonVida.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\CorazonVida.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\DirectorVida.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\DirectorVida.h">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\TetrisUSFX01\Escenario.cpp">
@@ -134,10 +164,10 @@
     <ClInclude Include="..\..\Source\TetrisUSFX01\EstadoTurbulentoAgua.h">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\TetrisUSFX01\Movimiento.cpp">
+    <ClCompile Include="..\..\Source\TetrisUSFX01\EstructuraVida.cpp">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\TetrisUSFX01\Movimiento.h">
+    <ClInclude Include="..\..\Source\TetrisUSFX01\EstructuraVida.h">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\TetrisUSFX01\Piece.cpp">

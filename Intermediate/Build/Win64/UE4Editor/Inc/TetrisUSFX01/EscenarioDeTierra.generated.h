@@ -58,7 +58,11 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AEscenarioDeTierra)
 
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_EscenarioDeTierra_h_15_PRIVATE_PROPERTY_OFFSET
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_EscenarioDeTierra_h_15_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__Director() { return STRUCT_OFFSET(AEscenarioDeTierra, Director); } \
+	FORCEINLINE static uint32 __PPO__CorazonFuego() { return STRUCT_OFFSET(AEscenarioDeTierra, CorazonFuego); }
+
+
 #define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_EscenarioDeTierra_h_12_PROLOG
 #define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_EscenarioDeTierra_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

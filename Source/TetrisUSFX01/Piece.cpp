@@ -52,7 +52,7 @@ APiece::APiece()
 void APiece::BeginPlay()
 {
 	Super::BeginPlay();
-    SpawnBlocks();
+    /*SpawnBlocks();*/
 }
 
 // Called every frame
@@ -60,11 +60,6 @@ void APiece::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-}
-
-void APiece::EstablecerMovimiento(UActorComponent* movimiento)
-{
-	Movimiento = Cast<IMovimiento>(movimiento);
 }
 
 void APiece::SetIndice(int indice)
@@ -272,9 +267,6 @@ void APiece::EliminarPieza()
 	}
 }
 
-void APiece::MoverAleatoriamente(float x, float y, float z, AActor* piece)
-{
-    Movimiento->MoverAleatoriamente(FMath::RandRange(-3, 3), FMath::RandRange(-3, 3), FMath::RandRange(-3, 3), piece);
-}
+
 
 

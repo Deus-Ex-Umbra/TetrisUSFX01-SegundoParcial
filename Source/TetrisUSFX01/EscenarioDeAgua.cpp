@@ -2,6 +2,9 @@
 
 
 #include "EscenarioDeAgua.h"
+#include "DirectorVida.h"
+#include "CorazonAire.h"
+#include "CorazonVida.h"
 
 AEscenarioDeAgua::AEscenarioDeAgua()
 {
@@ -31,6 +34,11 @@ void AEscenarioDeAgua::BeginPlay()
 {
 	Super::BeginPlay();
 	CrearEscenario();
+	Director = GetWorld()->SpawnActor<ADirectorVida>(ADirectorVida::StaticClass());
+	CorazonAire = GetWorld()->SpawnActor<ACorazonAire>(ACorazonAire::StaticClass());
+	Director->EstablecerBuilderVida(CorazonAire);
+	Director->ConstruirVida();
+	ACorazonVida* Corazon = Director->ObtenerVida();
 }
 
 void AEscenarioDeAgua::Tick(float DeltaTime)

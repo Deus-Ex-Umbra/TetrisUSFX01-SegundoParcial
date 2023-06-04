@@ -34,7 +34,6 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
 "C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\TetrisUSFX01Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
-"C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\ActorMovimiento.cpp.obj"
 "C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\Block.cpp.obj"
 "C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\BlockBrilloso.cpp.obj"
 "C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\BlockDorado.cpp.obj"
@@ -53,7 +52,6 @@
 "C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\Piece.cpp.obj"
 "C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\TetrisUSFX01.cpp.obj"
 "C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\TetrisUSFX01GameModeBase.cpp.obj"
-"C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\ActorMovimiento.gen.cpp.obj"
 "C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\Block.gen.cpp.obj"
 "C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\BlockBrilloso.gen.cpp.obj"
 "C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\BlockDorado.gen.cpp.obj"

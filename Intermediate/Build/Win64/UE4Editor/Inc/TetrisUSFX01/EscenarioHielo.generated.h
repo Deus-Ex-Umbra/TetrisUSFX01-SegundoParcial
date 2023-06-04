@@ -58,7 +58,11 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AEscenarioHielo)
 
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_EscenarioHielo_h_15_PRIVATE_PROPERTY_OFFSET
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_EscenarioHielo_h_15_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__Director() { return STRUCT_OFFSET(AEscenarioHielo, Director); } \
+	FORCEINLINE static uint32 __PPO__CorazonAire() { return STRUCT_OFFSET(AEscenarioHielo, CorazonAire); }
+
+
 #define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_EscenarioHielo_h_12_PROLOG
 #define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_EscenarioHielo_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

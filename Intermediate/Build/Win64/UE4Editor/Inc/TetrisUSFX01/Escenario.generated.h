@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TETRISUSFX01_Escenario_generated_h
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_SPARSE_DATA
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_RPC_WRAPPERS
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_RPC_WRAPPERS_NO_PURE_DECLS
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_INCLASS_NO_PURE_DECLS \
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_SPARSE_DATA
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_RPC_WRAPPERS
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_RPC_WRAPPERS_NO_PURE_DECLS
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAEscenario(); \
 	friend struct Z_Construct_UClass_AEscenario_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(AEscenario)
 
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_INCLASS \
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_INCLASS \
 private: \
 	static void StaticRegisterNativesAEscenario(); \
 	friend struct Z_Construct_UClass_AEscenario_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(AEscenario)
 
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_STANDARD_CONSTRUCTORS \
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AEscenario(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_ABSTRACT_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AEscenario) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_ENHANCED_CONSTRUCTORS \
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AEscenario(AEscenario&&); \
@@ -58,32 +58,32 @@ public: \
 	DEFINE_ABSTRACT_DEFAULT_CONSTRUCTOR_CALL(AEscenario)
 
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_PRIVATE_PROPERTY_OFFSET \
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__EscenarioMaterial() { return STRUCT_OFFSET(AEscenario, EscenarioMaterial); } \
 	FORCEINLINE static uint32 __PPO__LimitePiezasMaterial() { return STRUCT_OFFSET(AEscenario, LimitePiezasMaterial); }
 
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_8_PROLOG
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_GENERATED_BODY_LEGACY \
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_7_PROLOG
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_PRIVATE_PROPERTY_OFFSET \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_SPARSE_DATA \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_RPC_WRAPPERS \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_INCLASS \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_STANDARD_CONSTRUCTORS \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_PRIVATE_PROPERTY_OFFSET \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_SPARSE_DATA \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_RPC_WRAPPERS \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_INCLASS \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_GENERATED_BODY \
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_PRIVATE_PROPERTY_OFFSET \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_SPARSE_DATA \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_INCLASS_NO_PURE_DECLS \
-	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_11_ENHANCED_CONSTRUCTORS \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_PRIVATE_PROPERTY_OFFSET \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_SPARSE_DATA \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_INCLASS_NO_PURE_DECLS \
+	TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_Escenario_h_10_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -56,11 +56,10 @@ public:
 private:
 	enum PieceStatus { PS_NOT_INITED, PS_MOVING, PS_GOT_BOTTOM };
 	PieceStatus Status = PS_NOT_INITED;
-
+	float tiempo;
 	float CoolDown = 0.5f;
 	float CoolLeft = 0.5f;
 	bool bGameOver = false;
-
 	bool CheckGameOver();
 	bool GameOver = false;
 };

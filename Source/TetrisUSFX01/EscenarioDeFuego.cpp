@@ -2,6 +2,9 @@
 
 
 #include "EscenarioDeFuego.h"
+#include "DirectorVida.h"
+#include "CorazonFuego.h"
+#include "CorazonVida.h"
 
 AEscenarioDeFuego::AEscenarioDeFuego()
 {
@@ -31,6 +34,12 @@ void AEscenarioDeFuego::BeginPlay()
 {
 	Super::BeginPlay();
 	CrearEscenario();
+	Director = GetWorld()->SpawnActor<ADirectorVida>(ADirectorVida::StaticClass());
+	CorazonFuego = GetWorld()->SpawnActor<ACorazonFuego>(ACorazonFuego::StaticClass());
+	Director->EstablecerBuilderVida(CorazonFuego);
+	Director->ConstruirVida();
+	ACorazonVida* Corazon = Director->ObtenerVida();
+	/*CorazonFuego->SetActorLocation(FVector(0.0f, 0.0f, 100.0f));*/
 }
 
 void AEscenarioDeFuego::Tick(float DeltaTime)

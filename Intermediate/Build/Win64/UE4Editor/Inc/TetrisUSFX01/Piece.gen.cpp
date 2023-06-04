@@ -19,7 +19,6 @@ void EmptyLinkFunctionForGeneratedCodePiece() {}
 	UPackage* Z_Construct_UPackage__Script_TetrisUSFX01();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UMaterial_NoRegister();
-	TETRISUSFX01_API UClass* Z_Construct_UClass_UMovimiento_NoRegister();
 // End Cross Module References
 	void APiece::StaticRegisterNativesAPiece()
 	{
@@ -44,7 +43,6 @@ void EmptyLinkFunctionForGeneratedCodePiece() {}
 #endif
 		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Colors;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
-		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -78,9 +76,6 @@ void EmptyLinkFunctionForGeneratedCodePiece() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APiece_Statics::NewProp_Colors_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APiece_Statics::NewProp_Colors,
 	};
-		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_APiece_Statics::InterfaceParams[] = {
-			{ Z_Construct_UClass_UMovimiento_NoRegister, (int32)VTABLE_OFFSET(APiece, IMovimiento), false },
-		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APiece_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APiece>::IsAbstract,
 	};
@@ -91,11 +86,11 @@ void EmptyLinkFunctionForGeneratedCodePiece() {}
 		DependentSingletons,
 		nullptr,
 		Z_Construct_UClass_APiece_Statics::PropPointers,
-		InterfaceParams,
+		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		UE_ARRAY_COUNT(Z_Construct_UClass_APiece_Statics::PropPointers),
-		UE_ARRAY_COUNT(InterfaceParams),
+		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_APiece_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_APiece_Statics::Class_MetaDataParams))
 	};
@@ -108,7 +103,7 @@ void EmptyLinkFunctionForGeneratedCodePiece() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APiece, 611400650);
+	IMPLEMENT_CLASS(APiece, 3933145568);
 	template<> TETRISUSFX01_API UClass* StaticClass<APiece>()
 	{
 		return APiece::StaticClass();

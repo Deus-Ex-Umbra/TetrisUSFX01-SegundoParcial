@@ -22,4 +22,9 @@ public:
 	virtual void CrearEscenario();
 	/*virtual AEscenario* ObtenerEscenario(AEscenario* escenario);*/
 	//virtual void MostrarInformacion();
+private:
+	UPROPERTY(VisibleAnywhere, Category = "Director")
+	class ADirectorVida* Director;
+	UPROPERTY()
+		class ACorazonAire* CorazonAire;
 };

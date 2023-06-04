@@ -2,6 +2,7 @@
 
 
 #include "Escenario.h"
+#include "EstadodelEscenario.h"
 #include "EstadoNormalRoca.h"
 #include "EstadoCalienteFuego.h"
 #include "EstadoFrioHielo.h"
@@ -30,10 +31,9 @@ AEscenario* AEscenario::Inicializar()
 	EstadoNormalRoca->EstablecerEscenario(this);
 	EstadoTurbulentoAgua = GetWorld()->SpawnActor<AEstadoTurbulentoAgua>(AEstadoTurbulentoAgua::StaticClass());
 	EstadoTurbulentoAgua->EstablecerEscenario(this);
-	EstadoPrincipal = ObtenerEstadoalAzar();*/
-	/*AEscenarioFactory* EscenarioFabrica = GetWorld()->SpawnActor<AEscenarioFactory>(AEscenarioFactory::StaticClass());
-	AEscenario* Escena = EscenarioFabrica->FabricarEscenario(FMath::RandRange(1, 4));
-	return Escena;*/
+	EstadoPrincipal = ObtenerEstadoalAzar();
+	AEscenario* Escen = this;
+	return Escen;*/
 	return nullptr;
 }
 // Called every frame
@@ -54,16 +54,16 @@ void AEscenario::CambiarEstado(IEstadodelEscenario* _estado)
 
 IEstadodelEscenario* AEscenario::ObtenerEstadoalAzar()
 {
-	/*switch (FMath::RandRange(1, 4)) {*/
-	/*case 1:
+	/*switch (FMath::RandRange(1, 4)) {
+	case 1:
 		return EstadoCalienteFuego;
 	case 2:
 		return EstadoFrioHielo;
 	case 3:
 		return EstadoNormalRoca;
 	case 4:
-		return EstadoTurbulentoAgua;*/
-	/*default:*/
+		return EstadoTurbulentoAgua;
+	default:*/
 		return nullptr;
 	/*}*/
 }
