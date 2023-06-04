@@ -27,9 +27,8 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	void CrearVidas();
-	void EstablecerBlock(ABlock* block);
-	void EstablecerCoordenadas(std::vector<std::pair<float, float>> coordenadas);
+	//void CrearVidas();
+	//void EstablecerBlock(ABlock* block);
 private:
 	ABlock* block;
 	std::vector<std::pair<float, float>> BlockCoordenadas;

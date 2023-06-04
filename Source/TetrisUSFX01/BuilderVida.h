@@ -17,5 +17,6 @@ class TETRISUSFX01_API IBuilderVida
 	GENERATED_BODY()
 public:
 	virtual class ACorazonVida* ObtenerCorazonVida() = 0;
-	virtual void CrearBlock() = 0;
+	//virtual void CrearBlock() = 0;
+	virtual void CrearVida() = 0;
 };

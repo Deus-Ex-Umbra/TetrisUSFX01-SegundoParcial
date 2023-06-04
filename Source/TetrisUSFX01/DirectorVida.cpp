@@ -32,7 +32,7 @@ void ADirectorVida::EstablecerBuilderVida(IBuilderVida* newBuilderVida)
 
 void ADirectorVida::ConstruirVida()
 {
-	BuilderVida->CrearBlock();
+	BuilderVida->CrearVida();
 }
 
 ACorazonVida* ADirectorVida::ObtenerVida()

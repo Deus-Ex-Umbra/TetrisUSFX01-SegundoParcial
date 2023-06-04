@@ -27,9 +27,10 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	virtual class ACorazonVida* ObtenerCorazonVida() override;
-	virtual void CrearBlock() override;
+	//virtual void CrearBlock() override;
+	virtual void CrearVida() override;
 private:
-	ABlock* block;
+	TArray<ABlock*> blocks;
 	UPROPERTY()
 		class ACorazonVida* Vida;
 };
