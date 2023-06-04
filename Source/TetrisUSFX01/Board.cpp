@@ -172,7 +172,7 @@ void ABoard::NewPiece()
         NuevaPieza->Dismiss();
         NuevaPieza->Destroy();
     }
-    NuevaPieza = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 105.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    NuevaPieza = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 105.0f, 175.0f), FRotator(0.0f, 0.0f, 0.0f));
     NuevaPieza->SetIndice(FMath::RandRange(0, 6));
     NuevaPieza->SpawnBlocks();
     bGameOver = CheckGameOver();
@@ -310,7 +310,7 @@ bool ABoard::ObtenerGameOver()
 
 void ABoard::SpawnearPiezas()
 {
-    NuevaPieza = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 105.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
+    NuevaPieza = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 105.0f, 175.0f), FRotator(0.0f, 0.0f, 0.0f));
     NuevaPieza->SetIndice(FMath::RandRange(0, 6));
     NuevaPieza->SpawnBlocks();
     UAdaptadorMovimientoPieza* Movimiento = NewObject<UAdaptadorMovimientoPieza>(NuevaPieza);
