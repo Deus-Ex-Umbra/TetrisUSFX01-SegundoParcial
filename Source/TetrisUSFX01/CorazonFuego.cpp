@@ -11,6 +11,7 @@ ACorazonFuego::ACorazonFuego()
 	PrimaryActorTick.bCanEverTick = true;
 	SceneComponent = CreateDefaultSubobject<USceneComponent>("Root");
 	RootComponent = SceneComponent;
+	Tiempo = 0.0f;
 }
 
 // Called when the game starts or when spawned
@@ -24,7 +25,12 @@ void ACorazonFuego::BeginPlay()
 void ACorazonFuego::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	if (Tiempo >= 0.5f)
+	{
+		Tiempo = 0.0f;
+		MoverAzar(9, 5, 3);
+	}
+	else Tiempo += DeltaTime;
 }
 
 ACorazonVida* ACorazonFuego::ObtenerCorazonVida()

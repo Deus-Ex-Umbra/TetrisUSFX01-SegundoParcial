@@ -53,12 +53,12 @@ void AEscenarioHielo::BeginPlay()
 void AEscenarioHielo::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if (Tiempo >= 0.7f)
-	{
-		CorazonAire->MoverAzar(1, 1, 1);
-		Tiempo = 0.0f;
-	}
-	Tiempo += DeltaTime;
+	//if (Tiempo >= 0.7f)
+	//{
+	//	CorazonAire->MoverAzar(1, 1, 1);
+	//	Tiempo = 0.0f;
+	//}
+	//Tiempo += DeltaTime;
 }
 
 void AEscenarioHielo::CrearEscenario()

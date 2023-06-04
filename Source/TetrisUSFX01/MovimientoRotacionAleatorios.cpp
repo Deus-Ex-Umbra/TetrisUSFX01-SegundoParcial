@@ -13,33 +13,27 @@ AMovimientoRotacionAleatorios::AMovimientoRotacionAleatorios()
 
 void AMovimientoRotacionAleatorios::MovimientoLateral(float _Mx, float _My, float _Mz)
 {
-	FVector NuevaPosicion = GetActorLocation() + FVector(FMath::RandRange(-_Mx, _Mx), FMath::RandRange(-_My, _My), FMath::RandRange(-_Mz, _Mz));
-	SetActorLocation(NuevaPosicion);
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Movimiento Lateral"));
+	FVector NuevaPosicion = this->GetActorLocation() + FVector(FMath::RandRange(-_Mx, _Mx), FMath::RandRange(-_My, _My), FMath::RandRange(-_Mz, _Mz));
+	this->SetActorRelativeLocation(NuevaPosicion);
 }
 
 void AMovimientoRotacionAleatorios::MovimientoRotacion(float _Rx, float _Ry, float _Rz)
 {
 	FRotator NuevaRotacion = FRotator(FMath::RandRange(-_Rx, _Rx), FMath::RandRange(-_Ry, _Ry), FMath::RandRange(-_Rz, _Rz));
-	SetActorRotation(NuevaRotacion);
+	this->SetActorRelativeRotation(NuevaRotacion);
 }
 
 // Called when the game starts or when spawned
 void AMovimientoRotacionAleatorios::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Movimiento Rotacion Aleatorios"));
 }
 
 // Called every frame
 void AMovimientoRotacionAleatorios::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if (Tiempo >= 0.5f)
-	{
-		MovimientoLateral(Mx, My, Mz);
-		MovimientoRotacion(Rx, Ry, Rz);
-		Tiempo = 0.0f;
-	}
-	Tiempo += DeltaTime;
 }
 

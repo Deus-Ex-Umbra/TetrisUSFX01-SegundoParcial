@@ -9,7 +9,7 @@
 #include "AdaptadorCorazonMovimiento.generated.h"
 
 UCLASS()
-class TETRISUSFX01_API AAdaptadorCorazonMovimiento : public AActor, public IMovimiento, public AMovimientoRotacionAleatorios
+class TETRISUSFX01_API AAdaptadorCorazonMovimiento : public AActor, public IMovimiento
 {
 	GENERATED_BODY()
 	
@@ -25,7 +25,7 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-//private:
-//	UPROPERTY()
-//		class AMovimientoRotacionAleatorios* Movimientos;
+private:
+	UPROPERTY()
+		class AMovimientoRotacionAleatorios* Movimientos;
 };

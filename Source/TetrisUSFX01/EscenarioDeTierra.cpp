@@ -52,13 +52,13 @@ void AEscenarioDeTierra::BeginPlay()
 void AEscenarioDeTierra::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if (Tiempo >= 1.0f)
-	{
-		CorazonFuego->MoverAzar(FMath::RandRange(1, 3), FMath::RandRange(1, 3), FMath::RandRange(1, 3));
-		Tiempo = 0.0f;
-	}
-	else
-	Tiempo += DeltaTime;
+	//if (Tiempo >= 1.0f)
+	//{
+	//	CorazonFuego->MoverAzar(FMath::RandRange(1, 3), FMath::RandRange(1, 3), FMath::RandRange(1, 3));
+	//	Tiempo = 0.0f;
+	//}
+	//else
+	//Tiempo += DeltaTime;
 }
 
 void AEscenarioDeTierra::CrearEscenario()

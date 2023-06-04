@@ -43,4 +43,5 @@ private:
 	UPROPERTY()
 		class USceneComponent* SceneComponent;
 	IMovimiento* Movimiento;
+	float Tiempo;
 };

@@ -14,19 +14,16 @@ AAdaptadorCorazonMovimiento::AAdaptadorCorazonMovimiento()
 
 void AAdaptadorCorazonMovimiento::MovimientoAzar(float x, float y, float z)
 {
-	Mx = x;
-	My = y;
-	Mz = z;
-	Rx = x;
-	Ry = y;
-	Rz = z;
+	Movimientos->MovimientoLateral(x, y, z);
+	Movimientos->MovimientoRotacion(x, y, z);
 }
 
 // Called when the game starts or when spawned
 void AAdaptadorCorazonMovimiento::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	Movimientos = GetWorld()->SpawnActor<AMovimientoRotacionAleatorios>(AMovimientoRotacionAleatorios::StaticClass());
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, TEXT("Adaptador Corazon Movimiento"));
 }
 
 // Called every frame

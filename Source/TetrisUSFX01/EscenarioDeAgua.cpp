@@ -53,12 +53,12 @@ void AEscenarioDeAgua::BeginPlay()
 void AEscenarioDeAgua::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if(Tiempo >= 0.5f)
-	{
-		CorazonAire->MoverAzar(FMath::RandRange(1, 3), FMath::RandRange(1, 3), FMath::RandRange(1, 3));
-		Tiempo = 0.0f;
-	}
-	Tiempo += DeltaTime;
+	//if(Tiempo >= 0.5f)
+	//{
+	//	CorazonAire->MoverAzar(FMath::RandRange(1, 3), FMath::RandRange(1, 3), FMath::RandRange(1, 3));
+	//	Tiempo = 0.0f;
+	//}
+	//Tiempo += DeltaTime;
 }
 
 void AEscenarioDeAgua::CrearEscenario()

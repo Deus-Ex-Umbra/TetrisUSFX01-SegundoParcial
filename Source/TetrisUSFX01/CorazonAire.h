@@ -17,8 +17,8 @@ UCLASS()
 class TETRISUSFX01_API ACorazonAire : public AActor, public IBuilderVida, public ICorazon, public IMovimiento
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ACorazonAire();
 
@@ -26,7 +26,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	virtual class ACorazonVida* ObtenerCorazonVida() override;
@@ -43,4 +43,5 @@ private:
 	UPROPERTY()
 		class USceneComponent* SceneComponent;
 	IMovimiento* Movimiento;
+	float Tiempo;
 };

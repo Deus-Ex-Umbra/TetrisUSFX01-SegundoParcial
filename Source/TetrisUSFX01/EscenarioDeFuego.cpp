@@ -54,12 +54,12 @@ void AEscenarioDeFuego::BeginPlay()
 void AEscenarioDeFuego::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if (Tiempo >= 0.3f)
-	{
-		CorazonFuego->MoverAzar(FMath::RandRange(1, 4), FMath::RandRange(1, 4), FMath::RandRange(1, 4));
-		Tiempo = 0.0f;
-	}
-	Tiempo += DeltaTime;
+	//if (Tiempo >= 0.3f)
+	//{
+	//	CorazonFuego->MoverAzar(FMath::RandRange(1, 4), FMath::RandRange(1, 4), FMath::RandRange(1, 4));
+	//	Tiempo = 0.0f;
+	//}
+	//Tiempo += DeltaTime;
 }
 
 void AEscenarioDeFuego::CrearEscenario()
