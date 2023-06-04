@@ -30,6 +30,5 @@
 #include "C:/Users/USUARIO/Desktop/TetrisUSFX01-9Patrones-Sufrir/Intermediate/Build/Win64/UE4Editor/Inc/TetrisUSFX01/EstadoTurbulentoAgua.gen.cpp"
 #include "C:/Users/USUARIO/Desktop/TetrisUSFX01-9Patrones-Sufrir/Intermediate/Build/Win64/UE4Editor/Inc/TetrisUSFX01/EstructuraVida.gen.cpp"
 #include "C:/Users/USUARIO/Desktop/TetrisUSFX01-9Patrones-Sufrir/Intermediate/Build/Win64/UE4Editor/Inc/TetrisUSFX01/Movimiento.gen.cpp"
-#include "C:/Users/USUARIO/Desktop/TetrisUSFX01-9Patrones-Sufrir/Intermediate/Build/Win64/UE4Editor/Inc/TetrisUSFX01/MovimientoRotacionAleatorios.gen.cpp"
 #include "C:/Users/USUARIO/Desktop/TetrisUSFX01-9Patrones-Sufrir/Intermediate/Build/Win64/UE4Editor/Inc/TetrisUSFX01/Piece.gen.cpp"
 #include "C:/Users/USUARIO/Desktop/TetrisUSFX01-9Patrones-Sufrir/Intermediate/Build/Win64/UE4Editor/Inc/TetrisUSFX01/TetrisUSFX01GameModeBase.gen.cpp"

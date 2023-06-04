@@ -18,7 +18,11 @@
 			"DecoradorCorazon.cpp.obj",
 			"DirectorVida.cpp.obj",
 			"Escenario.cpp.obj",
+			"EscenarioDeAgua.cpp.obj",
+			"EscenarioDeFuego.cpp.obj",
+			"EscenarioDeTierra.cpp.obj",
 			"EscenarioFactory.cpp.obj",
+			"EscenarioHielo.cpp.obj",
 			"EstadoCalienteFuego.cpp.obj",
 			"EstadodelEscenario.cpp.obj",
 			"EstadoFrioHielo.cpp.obj",
@@ -32,10 +36,6 @@
 			"AdaptadorCorazonMovimiento.cpp.obj",
 			"CorazonAire.cpp.obj",
 			"CorazonFuego.cpp.obj",
-			"EscenarioDeAgua.cpp.obj",
-			"EscenarioDeFuego.cpp.obj",
-			"EscenarioDeTierra.cpp.obj",
-			"EscenarioHielo.cpp.obj",
 			"MovimientoRotacionAleatorios.cpp.obj"
 		],
 		"Module.TetrisUSFX01.gen.cpp.obj": [
@@ -70,9 +70,9 @@
 			"EstadoTurbulentoAgua.gen.cpp.obj",
 			"EstructuraVida.gen.cpp.obj",
 			"Movimiento.gen.cpp.obj",
-			"MovimientoRotacionAleatorios.gen.cpp.obj",
 			"Piece.gen.cpp.obj",
 			"TetrisUSFX01GameModeBase.gen.cpp.obj",
+			"MovimientoRotacionAleatorios.gen.cpp.obj",
 			"TetrisUSFX01.init.gen.cpp.obj"
 		]
 	}

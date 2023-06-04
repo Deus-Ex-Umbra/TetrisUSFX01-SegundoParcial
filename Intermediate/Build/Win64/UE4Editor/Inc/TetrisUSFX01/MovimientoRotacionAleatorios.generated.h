@@ -14,8 +14,18 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define TETRISUSFX01_MovimientoRotacionAleatorios_generated_h
 
 #define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_MovimientoRotacionAleatorios_h_13_SPARSE_DATA
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_MovimientoRotacionAleatorios_h_13_RPC_WRAPPERS
-#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_MovimientoRotacionAleatorios_h_13_RPC_WRAPPERS_NO_PURE_DECLS
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_MovimientoRotacionAleatorios_h_13_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execMovimientoRotacion); \
+	DECLARE_FUNCTION(execMovimientoLateral);
+
+
+#define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_MovimientoRotacionAleatorios_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execMovimientoRotacion); \
+	DECLARE_FUNCTION(execMovimientoLateral);
+
+
 #define TetrisUSFX01_9Patrones_Sufrir_Source_TetrisUSFX01_MovimientoRotacionAleatorios_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMovimientoRotacionAleatorios(); \

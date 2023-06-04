@@ -13,13 +13,14 @@ AMovimientoRotacionAleatorios::AMovimientoRotacionAleatorios()
 
 void AMovimientoRotacionAleatorios::MovimientoLateral(float _Mx, float _My, float _Mz)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Movimiento Lateral"));
+	/*GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Movimiento Lateral"));*/
 	FVector NuevaPosicion = this->GetActorLocation() + FVector(FMath::RandRange(-_Mx, _Mx), FMath::RandRange(-_My, _My), FMath::RandRange(-_Mz, _Mz));
 	this->SetActorRelativeLocation(NuevaPosicion);
 }
 
 void AMovimientoRotacionAleatorios::MovimientoRotacion(float _Rx, float _Ry, float _Rz)
 {
+	/*GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Cyan, TEXT("Movimiento Rotacion"));*/
 	FRotator NuevaRotacion = FRotator(FMath::RandRange(-_Rx, _Rx), FMath::RandRange(-_Ry, _Ry), FMath::RandRange(-_Rz, _Rz));
 	this->SetActorRelativeRotation(NuevaRotacion);
 }
@@ -28,7 +29,7 @@ void AMovimientoRotacionAleatorios::MovimientoRotacion(float _Rx, float _Ry, flo
 void AMovimientoRotacionAleatorios::BeginPlay()
 {
 	Super::BeginPlay();
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Movimiento Rotacion Aleatorios"));
+	/*GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Movimiento Rotacion Aleatorios"));*/
 }
 
 // Called every frame

@@ -1,0 +1,16 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-TetrisUSFX01-7166.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\TetrisUSFX01Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\CorazonFuego.cpp.obj"
+"C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\Module.TetrisUSFX01.cpp.obj"
+"C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\MovimientoRotacionAleatorios.gen.cpp.obj"
+"C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\TetrisUSFX01.init.gen.cpp.obj"
+"C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\Module.TetrisUSFX01.gen.cpp.obj"
+"C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\Default.rc2.res"
+/OUT:"C:\Users\USUARIO\Desktop\TetrisUSFX01-9Patrones-Sufrir\Intermediate\Build\Win64\UE4Editor\Development\TetrisUSFX01\UE4Editor-TetrisUSFX01-7166.lib"

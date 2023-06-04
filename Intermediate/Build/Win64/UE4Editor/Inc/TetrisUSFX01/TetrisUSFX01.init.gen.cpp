@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeTetrisUSFX01_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xCE8AB2C5,
+				0x070D0E1E,
 				0x88786F82,
 				METADATA_PARAMS(nullptr, 0)
 			};

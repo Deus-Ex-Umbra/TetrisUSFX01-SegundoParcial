@@ -28,6 +28,8 @@ void ACorazonAire::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	if (Tiempo >= 0.5f) {
 		MoverAzar(7, 4, 3);
+		FRotator NuevaRotacion = FRotator(FMath::RandRange(-10, 10), FMath::RandRange(-20, 20), FMath::RandRange(-20, 20));
+		SetActorRelativeRotation(NuevaRotacion);
 		Tiempo = 0.0f;
 	}
 	Tiempo += DeltaTime;

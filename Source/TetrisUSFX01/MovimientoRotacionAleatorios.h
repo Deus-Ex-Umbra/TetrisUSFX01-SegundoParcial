@@ -15,7 +15,9 @@ class TETRISUSFX01_API AMovimientoRotacionAleatorios : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AMovimientoRotacionAleatorios();
+	UFUNCTION(BlueprintCallable)
 	void MovimientoLateral(float _Mx, float _My, float _Mz);
+	UFUNCTION(BlueprintCallable)
 	void MovimientoRotacion(float _Rx, float _Ry, float _Rz);
 protected:
 	// Called when the game starts or when spawned

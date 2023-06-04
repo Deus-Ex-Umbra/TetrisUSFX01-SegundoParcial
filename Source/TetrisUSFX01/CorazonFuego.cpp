@@ -29,6 +29,8 @@ void ACorazonFuego::Tick(float DeltaTime)
 	{
 		Tiempo = 0.0f;
 		MoverAzar(9, 5, 3);
+		FRotator NuevaRotacion = FRotator(FMath::RandRange(-10, 10), FMath::RandRange(-20, 20), FMath::RandRange(-20, 20));
+		SetActorRelativeRotation(NuevaRotacion);
 	}
 	else Tiempo += DeltaTime;
 }

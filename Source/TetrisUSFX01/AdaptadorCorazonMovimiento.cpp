@@ -14,6 +14,7 @@ AAdaptadorCorazonMovimiento::AAdaptadorCorazonMovimiento()
 
 void AAdaptadorCorazonMovimiento::MovimientoAzar(float x, float y, float z)
 {
+	Movimientos = GetWorld()->SpawnActor<AMovimientoRotacionAleatorios>(AMovimientoRotacionAleatorios::StaticClass());
 	Movimientos->MovimientoLateral(x, y, z);
 	Movimientos->MovimientoRotacion(x, y, z);
 }
@@ -22,7 +23,6 @@ void AAdaptadorCorazonMovimiento::MovimientoAzar(float x, float y, float z)
 void AAdaptadorCorazonMovimiento::BeginPlay()
 {
 	Super::BeginPlay();
-	Movimientos = GetWorld()->SpawnActor<AMovimientoRotacionAleatorios>(AMovimientoRotacionAleatorios::StaticClass());
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, TEXT("Adaptador Corazon Movimiento"));
 }
 
