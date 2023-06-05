@@ -267,6 +267,19 @@ void APiece::EliminarPieza()
 	}
 }
 
+void APiece::EstablecerEstrategia(AActor* _Estrategia)
+{
+    Estrategia = Cast<IPieceCaracteristicasEstrategia>(_Estrategia);
+}
+
+void APiece::Mover()
+{
+    Estrategia->Rotar(this);
+    Estrategia->MoverArribaAbajo(this);
+    Estrategia->MoverIzquierdaDerecha(this);
+    Estrategia->MoverAdelanteAtras(this);
+}
+
 
 
 

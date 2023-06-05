@@ -11,14 +11,13 @@ UCLASS()
 class TETRISUSFX01_API AMovimientoRotacionAleatorios : public AActor
 {
 	GENERATED_BODY()
-	
 public:	
 	// Sets default values for this actor's properties
 	AMovimientoRotacionAleatorios();
 	UFUNCTION(BlueprintCallable)
-	void MovimientoLateral(float _Mx, float _My, float _Mz);
+	void MovimientoLateral(float _Mx, float _My, float _Mz, AActor* actor);
 	UFUNCTION(BlueprintCallable)
-	void MovimientoRotacion(float _Rx, float _Ry, float _Rz);
+	void MovimientoRotacion(float _Rx, float _Ry, float _Rz, AActor* actor);
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

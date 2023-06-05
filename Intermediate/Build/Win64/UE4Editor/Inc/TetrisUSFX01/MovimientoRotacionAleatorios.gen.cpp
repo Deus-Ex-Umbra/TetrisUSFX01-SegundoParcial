@@ -17,15 +17,17 @@ void EmptyLinkFunctionForGeneratedCodeMovimientoRotacionAleatorios() {}
 	TETRISUSFX01_API UClass* Z_Construct_UClass_AMovimientoRotacionAleatorios();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_TetrisUSFX01();
+	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(AMovimientoRotacionAleatorios::execMovimientoRotacion)
 	{
 		P_GET_PROPERTY(FFloatProperty,Z_Param__Rx);
 		P_GET_PROPERTY(FFloatProperty,Z_Param__Ry);
 		P_GET_PROPERTY(FFloatProperty,Z_Param__Rz);
+		P_GET_OBJECT(AActor,Z_Param_actor);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->MovimientoRotacion(Z_Param__Rx,Z_Param__Ry,Z_Param__Rz);
+		P_THIS->MovimientoRotacion(Z_Param__Rx,Z_Param__Ry,Z_Param__Rz,Z_Param_actor);
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(AMovimientoRotacionAleatorios::execMovimientoLateral)
@@ -33,9 +35,10 @@ void EmptyLinkFunctionForGeneratedCodeMovimientoRotacionAleatorios() {}
 		P_GET_PROPERTY(FFloatProperty,Z_Param__Mx);
 		P_GET_PROPERTY(FFloatProperty,Z_Param__My);
 		P_GET_PROPERTY(FFloatProperty,Z_Param__Mz);
+		P_GET_OBJECT(AActor,Z_Param_actor);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->MovimientoLateral(Z_Param__Mx,Z_Param__My,Z_Param__Mz);
+		P_THIS->MovimientoLateral(Z_Param__Mx,Z_Param__My,Z_Param__Mz,Z_Param_actor);
 		P_NATIVE_END;
 	}
 	void AMovimientoRotacionAleatorios::StaticRegisterNativesAMovimientoRotacionAleatorios()
@@ -54,10 +57,12 @@ void EmptyLinkFunctionForGeneratedCodeMovimientoRotacionAleatorios() {}
 			float _Mx;
 			float _My;
 			float _Mz;
+			AActor* actor;
 		};
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp__Mx;
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp__My;
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp__Mz;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_actor;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -67,10 +72,12 @@ void EmptyLinkFunctionForGeneratedCodeMovimientoRotacionAleatorios() {}
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoLateral_Statics::NewProp__Mx = { "_Mx", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(MovimientoRotacionAleatorios_eventMovimientoLateral_Parms, _Mx), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoLateral_Statics::NewProp__My = { "_My", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(MovimientoRotacionAleatorios_eventMovimientoLateral_Parms, _My), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoLateral_Statics::NewProp__Mz = { "_Mz", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(MovimientoRotacionAleatorios_eventMovimientoLateral_Parms, _Mz), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoLateral_Statics::NewProp_actor = { "actor", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(MovimientoRotacionAleatorios_eventMovimientoLateral_Parms, actor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoLateral_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoLateral_Statics::NewProp__Mx,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoLateral_Statics::NewProp__My,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoLateral_Statics::NewProp__Mz,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoLateral_Statics::NewProp_actor,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoLateral_Statics::Function_MetaDataParams[] = {
@@ -94,10 +101,12 @@ void EmptyLinkFunctionForGeneratedCodeMovimientoRotacionAleatorios() {}
 			float _Rx;
 			float _Ry;
 			float _Rz;
+			AActor* actor;
 		};
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp__Rx;
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp__Ry;
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp__Rz;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_actor;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -107,10 +116,12 @@ void EmptyLinkFunctionForGeneratedCodeMovimientoRotacionAleatorios() {}
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoRotacion_Statics::NewProp__Rx = { "_Rx", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(MovimientoRotacionAleatorios_eventMovimientoRotacion_Parms, _Rx), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoRotacion_Statics::NewProp__Ry = { "_Ry", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(MovimientoRotacionAleatorios_eventMovimientoRotacion_Parms, _Ry), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoRotacion_Statics::NewProp__Rz = { "_Rz", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(MovimientoRotacionAleatorios_eventMovimientoRotacion_Parms, _Rz), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoRotacion_Statics::NewProp_actor = { "actor", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(MovimientoRotacionAleatorios_eventMovimientoRotacion_Parms, actor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoRotacion_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoRotacion_Statics::NewProp__Rx,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoRotacion_Statics::NewProp__Ry,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoRotacion_Statics::NewProp__Rz,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoRotacion_Statics::NewProp_actor,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoRotacion_Statics::Function_MetaDataParams[] = {
@@ -146,8 +157,8 @@ void EmptyLinkFunctionForGeneratedCodeMovimientoRotacionAleatorios() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_TetrisUSFX01,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMovimientoRotacionAleatorios_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoLateral, "MovimientoLateral" }, // 1200581020
-		{ &Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoRotacion, "MovimientoRotacion" }, // 928250421
+		{ &Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoLateral, "MovimientoLateral" }, // 2302117677
+		{ &Z_Construct_UFunction_AMovimientoRotacionAleatorios_MovimientoRotacion, "MovimientoRotacion" }, // 1533878897
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMovimientoRotacionAleatorios_Statics::Class_MetaDataParams[] = {
@@ -182,7 +193,7 @@ void EmptyLinkFunctionForGeneratedCodeMovimientoRotacionAleatorios() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMovimientoRotacionAleatorios, 38334574);
+	IMPLEMENT_CLASS(AMovimientoRotacionAleatorios, 2983277698);
 	template<> TETRISUSFX01_API UClass* StaticClass<AMovimientoRotacionAleatorios>()
 	{
 		return AMovimientoRotacionAleatorios::StaticClass();

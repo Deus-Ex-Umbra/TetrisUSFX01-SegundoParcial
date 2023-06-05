@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeAdaptadorCorazonMovimiento() {}
 	TETRISUSFX01_API UClass* Z_Construct_UClass_AAdaptadorCorazonMovimiento();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_TetrisUSFX01();
+	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	TETRISUSFX01_API UClass* Z_Construct_UClass_AMovimientoRotacionAleatorios_NoRegister();
 	TETRISUSFX01_API UClass* Z_Construct_UClass_UMovimiento_NoRegister();
 // End Cross Module References
@@ -33,6 +34,10 @@ void EmptyLinkFunctionForGeneratedCodeAdaptadorCorazonMovimiento() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Root_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Root;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Movimientos_MetaData[];
 #endif
@@ -53,12 +58,20 @@ void EmptyLinkFunctionForGeneratedCodeAdaptadorCorazonMovimiento() {}
 	};
 #endif
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAdaptadorCorazonMovimiento_Statics::NewProp_Root_MetaData[] = {
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "AdaptadorCorazonMovimiento.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAdaptadorCorazonMovimiento_Statics::NewProp_Root = { "Root", nullptr, (EPropertyFlags)0x0010000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AAdaptadorCorazonMovimiento, Root), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AAdaptadorCorazonMovimiento_Statics::NewProp_Root_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAdaptadorCorazonMovimiento_Statics::NewProp_Root_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAdaptadorCorazonMovimiento_Statics::NewProp_Movimientos_MetaData[] = {
 		{ "ModuleRelativePath", "AdaptadorCorazonMovimiento.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAdaptadorCorazonMovimiento_Statics::NewProp_Movimientos = { "Movimientos", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AAdaptadorCorazonMovimiento, Movimientos), Z_Construct_UClass_AMovimientoRotacionAleatorios_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AAdaptadorCorazonMovimiento_Statics::NewProp_Movimientos_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAdaptadorCorazonMovimiento_Statics::NewProp_Movimientos_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAdaptadorCorazonMovimiento_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAdaptadorCorazonMovimiento_Statics::NewProp_Root,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAdaptadorCorazonMovimiento_Statics::NewProp_Movimientos,
 	};
 		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AAdaptadorCorazonMovimiento_Statics::InterfaceParams[] = {
@@ -91,7 +104,7 @@ void EmptyLinkFunctionForGeneratedCodeAdaptadorCorazonMovimiento() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AAdaptadorCorazonMovimiento, 1197471813);
+	IMPLEMENT_CLASS(AAdaptadorCorazonMovimiento, 385475009);
 	template<> TETRISUSFX01_API UClass* StaticClass<AAdaptadorCorazonMovimiento>()
 	{
 		return AAdaptadorCorazonMovimiento::StaticClass();

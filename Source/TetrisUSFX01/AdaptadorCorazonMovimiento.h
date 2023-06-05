@@ -12,11 +12,12 @@ UCLASS()
 class TETRISUSFX01_API AAdaptadorCorazonMovimiento : public AActor, public IMovimiento
 {
 	GENERATED_BODY()
-	
 public:	
 	// Sets default values for this actor's properties
 	AAdaptadorCorazonMovimiento();
-	virtual void MovimientoAzar(float x, float y, float z) override;
+	virtual void MovimientoAzar(float x, float y, float z, AActor* actor) override;
+	UPROPERTY()
+		class USceneComponent* Root;
 
 protected:
 	// Called when the game starts or when spawned

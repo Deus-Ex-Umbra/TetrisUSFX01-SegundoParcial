@@ -12,7 +12,6 @@ UCLASS()
 class TETRISUSFX01_API ABoard : public APawn
 {
 	GENERATED_BODY()
-
 public:
 	// Sets default values for this pawn's properties
 	ABoard();
@@ -20,7 +19,6 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -54,14 +52,26 @@ public:
 	UPROPERTY()
 		AEscenario* Escen;
 	UPROPERTY()
-		AEscenarioFactory* FabricadeEscenario;
+		class AEscenarioFactory* FabricadeEscenario;
+	UPROPERTY()
+		class APublicadorPuntos* PublicadorPuntos;
+	UPROPERTY()
+		class ABlockObservador* Observador;
+	UPROPERTY()
+		class APieceStrategiaRoja* EstrategiaRoja;
+	UPROPERTY()
+		class APieceStrategiaAmarilla* EstrategiaAmarilla;
+	UPROPERTY()
+		class APieceEstrategiaVerde* EstrategiaVerde;
 private:
 	enum PieceStatus { PS_NOT_INITED, PS_MOVING, PS_GOT_BOTTOM };
 	PieceStatus Status = PS_NOT_INITED;
 	float tiempo;
+	float tiempocambio;
 	float CoolDown = 0.5f;
 	float CoolLeft = 0.5f;
 	bool bGameOver = false;
 	bool CheckGameOver();
 	bool GameOver = false;
+	int Puntos;
 };

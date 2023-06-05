@@ -28,8 +28,8 @@ void ACorazonAire::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	if (Tiempo >= 0.5f) {
 		MoverAzar(7, 4, 3);
-		FRotator NuevaRotacion = FRotator(FMath::RandRange(-10, 10), FMath::RandRange(-20, 20), FMath::RandRange(-20, 20));
-		SetActorRelativeRotation(NuevaRotacion);
+		/*FRotator NuevaRotacion = FRotator(FMath::RandRange(-10, 10), FMath::RandRange(-20, 20), FMath::RandRange(-20, 20));
+		SetActorRelativeRotation(NuevaRotacion);*/
 		Tiempo = 0.0f;
 	}
 	Tiempo += DeltaTime;
@@ -63,7 +63,7 @@ void ACorazonAire::CrearVida()
 
 void ACorazonAire::MoverAzar(float x, float y, float z)
 {
-	MovimientoAzar(x, y, z);
+	MovimientoAzar(x, y, z, this);
 }
 
 void ACorazonAire::Colorear(UMaterialInterface* Material)
@@ -74,9 +74,9 @@ void ACorazonAire::Colorear(UMaterialInterface* Material)
 	}
 }
 
-void ACorazonAire::MovimientoAzar(float x, float y, float z)
+void ACorazonAire::MovimientoAzar(float x, float y, float z, AActor* actor)
 {
-	Movimiento->MovimientoAzar(x, y, z);
+	Movimiento->MovimientoAzar(x, y, z, actor);
 }
 
 void ACorazonAire::EstablecerMovimiento(AActor* _Movimiento)

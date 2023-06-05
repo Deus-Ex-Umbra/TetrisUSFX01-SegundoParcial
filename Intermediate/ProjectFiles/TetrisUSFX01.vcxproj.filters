@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\TetrisUSFX01.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{0D2284B1-FE23-4B8E-9BC6-F28E2034D8CC}</UniqueIdentifier>
+      <UniqueIdentifier>{E3BE8C65-CF05-49A4-A87B-EEF951162FAB}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\TetrisUSFX01.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\README.md" />
     <Filter Include="Config">
-      <UniqueIdentifier>{5E678E0B-E560-42DB-B370-C68316670CC0}</UniqueIdentifier>
+      <UniqueIdentifier>{96AFCC7D-6079-4CEB-A75D-2953529328E4}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\TetrisUSFX01">
-      <UniqueIdentifier>{6BEAEC5F-15A1-42E9-8936-4F1C2F676CDA}</UniqueIdentifier>
+      <UniqueIdentifier>{E5EF2B70-F9BA-4794-8819-DBC28DC99E0B}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\TetrisUSFX01\AdaptadorCorazonMovimiento.cpp">
       <Filter>Source\TetrisUSFX01</Filter>
@@ -80,6 +80,12 @@
     <ClInclude Include="..\..\Source\TetrisUSFX01\BlockHelado.h">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\BlockObservador.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\BlockObservador.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\TetrisUSFX01\Board.cpp">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClCompile>
@@ -90,6 +96,12 @@
       <Filter>Source\TetrisUSFX01</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\TetrisUSFX01\BuilderVida.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\CambiosClase.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\CambiosClase.h">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\TetrisUSFX01\Corazon.cpp">
@@ -228,6 +240,48 @@
       <Filter>Source\TetrisUSFX01</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\TetrisUSFX01\Piece.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\PieceCaracteristicasEstrategia.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\PieceCaracteristicasEstrategia.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\PieceEstrategiaVerde.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\PieceEstrategiaVerde.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\PieceStrategiaAmarilla.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\PieceStrategiaAmarilla.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\PieceStrategiaRoja.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\PieceStrategiaRoja.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\Publicador.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\Publicador.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\PublicadorPuntos.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\PublicadorPuntos.h">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TetrisUSFX01\Suscriptor.cpp">
+      <Filter>Source\TetrisUSFX01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TetrisUSFX01\Suscriptor.h">
       <Filter>Source\TetrisUSFX01</Filter>
     </ClInclude>
     <None Include="..\..\Source\TetrisUSFX01\TetrisUSFX01.Build.cs">

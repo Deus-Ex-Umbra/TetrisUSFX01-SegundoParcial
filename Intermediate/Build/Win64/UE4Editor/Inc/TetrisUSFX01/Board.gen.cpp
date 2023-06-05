@@ -20,6 +20,11 @@ void EmptyLinkFunctionForGeneratedCodeBoard() {}
 	TETRISUSFX01_API UClass* Z_Construct_UClass_APiece_NoRegister();
 	TETRISUSFX01_API UClass* Z_Construct_UClass_AEscenario_NoRegister();
 	TETRISUSFX01_API UClass* Z_Construct_UClass_AEscenarioFactory_NoRegister();
+	TETRISUSFX01_API UClass* Z_Construct_UClass_APublicadorPuntos_NoRegister();
+	TETRISUSFX01_API UClass* Z_Construct_UClass_ABlockObservador_NoRegister();
+	TETRISUSFX01_API UClass* Z_Construct_UClass_APieceStrategiaRoja_NoRegister();
+	TETRISUSFX01_API UClass* Z_Construct_UClass_APieceStrategiaAmarilla_NoRegister();
+	TETRISUSFX01_API UClass* Z_Construct_UClass_APieceEstrategiaVerde_NoRegister();
 // End Cross Module References
 	void ABoard::StaticRegisterNativesABoard()
 	{
@@ -50,6 +55,26 @@ void EmptyLinkFunctionForGeneratedCodeBoard() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FabricadeEscenario_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FabricadeEscenario;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PublicadorPuntos_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_PublicadorPuntos;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Observador_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Observador;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EstrategiaRoja_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_EstrategiaRoja;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EstrategiaAmarilla_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_EstrategiaAmarilla;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EstrategiaVerde_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_EstrategiaVerde;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -91,11 +116,46 @@ void EmptyLinkFunctionForGeneratedCodeBoard() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABoard_Statics::NewProp_FabricadeEscenario = { "FabricadeEscenario", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABoard, FabricadeEscenario), Z_Construct_UClass_AEscenarioFactory_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABoard_Statics::NewProp_FabricadeEscenario_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABoard_Statics::NewProp_FabricadeEscenario_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABoard_Statics::NewProp_PublicadorPuntos_MetaData[] = {
+		{ "ModuleRelativePath", "Board.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABoard_Statics::NewProp_PublicadorPuntos = { "PublicadorPuntos", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABoard, PublicadorPuntos), Z_Construct_UClass_APublicadorPuntos_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABoard_Statics::NewProp_PublicadorPuntos_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABoard_Statics::NewProp_PublicadorPuntos_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABoard_Statics::NewProp_Observador_MetaData[] = {
+		{ "ModuleRelativePath", "Board.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABoard_Statics::NewProp_Observador = { "Observador", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABoard, Observador), Z_Construct_UClass_ABlockObservador_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABoard_Statics::NewProp_Observador_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABoard_Statics::NewProp_Observador_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaRoja_MetaData[] = {
+		{ "ModuleRelativePath", "Board.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaRoja = { "EstrategiaRoja", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABoard, EstrategiaRoja), Z_Construct_UClass_APieceStrategiaRoja_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaRoja_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaRoja_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaAmarilla_MetaData[] = {
+		{ "ModuleRelativePath", "Board.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaAmarilla = { "EstrategiaAmarilla", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABoard, EstrategiaAmarilla), Z_Construct_UClass_APieceStrategiaAmarilla_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaAmarilla_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaAmarilla_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaVerde_MetaData[] = {
+		{ "ModuleRelativePath", "Board.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaVerde = { "EstrategiaVerde", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABoard, EstrategiaVerde), Z_Construct_UClass_APieceEstrategiaVerde_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaVerde_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaVerde_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABoard_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_CurrentPiece,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_Escenario,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_Escen,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_FabricadeEscenario,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_PublicadorPuntos,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_Observador,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaRoja,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaAmarilla,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoard_Statics::NewProp_EstrategiaVerde,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABoard_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABoard>::IsAbstract,
@@ -124,7 +184,7 @@ void EmptyLinkFunctionForGeneratedCodeBoard() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABoard, 2846386924);
+	IMPLEMENT_CLASS(ABoard, 848628894);
 	template<> TETRISUSFX01_API UClass* StaticClass<ABoard>()
 	{
 		return ABoard::StaticClass();

@@ -29,8 +29,8 @@ void ACorazonFuego::Tick(float DeltaTime)
 	{
 		Tiempo = 0.0f;
 		MoverAzar(9, 5, 3);
-		FRotator NuevaRotacion = FRotator(FMath::RandRange(-10, 10), FMath::RandRange(-20, 20), FMath::RandRange(-20, 20));
-		SetActorRelativeRotation(NuevaRotacion);
+		/*FRotator NuevaRotacion = FRotator(FMath::RandRange(-10, 10), FMath::RandRange(-20, 20), FMath::RandRange(-20, 20));
+		SetActorRelativeRotation(NuevaRotacion);*/
 	}
 	else Tiempo += DeltaTime;
 }
@@ -63,7 +63,7 @@ void ACorazonFuego::CrearVida()
 
 void ACorazonFuego::MoverAzar(float x, float y, float z)
 {
-	MovimientoAzar(x, y, z);
+	MovimientoAzar(x, y, z, this);
 }
 
 void ACorazonFuego::Colorear(UMaterialInterface* Material)
@@ -75,9 +75,9 @@ void ACorazonFuego::Colorear(UMaterialInterface* Material)
 
 }
 
-void ACorazonFuego::MovimientoAzar(float x, float y, float z)
+void ACorazonFuego::MovimientoAzar(float x, float y, float z, AActor* actor)
 {
-	Movimiento->MovimientoAzar(x, y, z);
+	Movimiento->MovimientoAzar(x, y, z, actor);
 }
 
 void ACorazonFuego::EstablecerMovimiento(AActor* _Movimiento)

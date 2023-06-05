@@ -8,6 +8,7 @@
 #include "BlockBrilloso.h"
 #include "BlockDorado.h"
 #include <functional>
+#include "PieceCaracteristicasEstrategia.h"
 #include "Piece.generated.h"
 UCLASS()
 class TETRISUSFX01_API APiece : public AActor
@@ -35,11 +36,14 @@ public:
 	void Dismiss();
 	bool CheckWillCollision(std::function<FVector(FVector OldLocation)> ChangeBeforeCheck);
 	void EliminarPieza();
+	void EstablecerEstrategia(AActor* _Estrategia);
+	void Mover();
 	UPROPERTY(EditAnywhere)
 	TArray<class UMaterial*> Colors;
 
 private:
 	int Indice;
+	IPieceCaracteristicasEstrategia* Estrategia;
 	TArray<ABlock*> Blocks;
 public:
 	void SpawnBlocks();

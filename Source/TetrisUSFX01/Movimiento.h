@@ -14,5 +14,5 @@ class TETRISUSFX01_API IMovimiento
 {
 	GENERATED_BODY()
 public:
-	virtual void MovimientoAzar(float x, float y, float z) = 0;
+	virtual void MovimientoAzar(float x, float y, float z, AActor* actor) = 0;
 };

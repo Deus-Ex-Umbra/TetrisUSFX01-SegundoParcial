@@ -8,6 +8,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
 #ifdef TETRISUSFX01_MovimientoRotacionAleatorios_generated_h
 #error "MovimientoRotacionAleatorios.generated.h already included, missing '#pragma once' in MovimientoRotacionAleatorios.h"
 #endif

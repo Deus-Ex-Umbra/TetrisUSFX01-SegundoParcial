@@ -15,18 +15,30 @@
 #include "CorazonVida.h"
 #include "CorazonFuego.h"
 #include "CorazonAire.h"
+#include "PublicadorPuntos.h"
+#include "BlockObservador.h"
+#include "PieceStrategiaRoja.h"
+#include "PieceStrategiaAmarilla.h"
+#include "PieceEstrategiaVerde.h"
 ABoard::ABoard()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
     tiempo = 0.0f;
+    tiempocambio = 0.0f;
+    Puntos = 0.0f;
 }
 
 // Called when the game starts or when spawned
 void ABoard::BeginPlay()
 {
     Super::BeginPlay();
-
+    EstrategiaRoja = GetWorld()->SpawnActor<APieceStrategiaRoja>(APieceStrategiaRoja::StaticClass());
+    EstrategiaAmarilla = GetWorld()->SpawnActor<APieceStrategiaAmarilla>(APieceStrategiaAmarilla::StaticClass());
+    EstrategiaVerde = GetWorld()->SpawnActor<APieceEstrategiaVerde>(APieceEstrategiaVerde::StaticClass());
+    PublicadorPuntos = GetWorld()->SpawnActor<APublicadorPuntos>(APublicadorPuntos::StaticClass());
+    Observador = GetWorld()->SpawnActor<ABlockObservador>(FVector(-20.0f, -150.0f, 50.0f), FRotator(90.0f, 270.0f, 0.0f));
+    Observador->EstablecerPublicador(PublicadorPuntos);
     for (TActorIterator<APiece> it(GetWorld()); it; ++it)
     {
         if (it->GetFName() == TEXT("DissmissPieces"))
@@ -98,6 +110,8 @@ void ABoard::Tick(float DeltaTime)
             CoolLeft = CoolDown;
             EstablecerCoolLeft(CoolDown);
             Status = PS_MOVING;
+            Puntos += 10;
+            PublicadorPuntos->EstablecerPuntos(Puntos);
         }
         break;
     default:
@@ -182,6 +196,20 @@ void ABoard::NewPiece()
     NuevaPieza->SetIndice(FMath::RandRange(0, 6));
     NuevaPieza->SpawnBlocks();
     bGameOver = CheckGameOver();
+    switch (FMath::RandRange(1, 3)) {
+    case 1:
+        NuevaPieza->EstablecerEstrategia(EstrategiaRoja);
+        break;
+    case 2:
+        NuevaPieza->EstablecerEstrategia(EstrategiaAmarilla);
+        break;
+    case 3:
+        NuevaPieza->EstablecerEstrategia(EstrategiaVerde);
+        break;
+    default:
+        break;
+    }
+    NuevaPieza->Mover();
     if (bGameOver)
     {
         UE_LOG(LogTemp, Warning, TEXT("Game Over!!!!!!!!"));
@@ -242,24 +270,26 @@ void ABoard::CheckLine()
             for (auto&& Result : OutOverlaps)
             {
                 Result.GetActor()->Destroy();
-                Escenario->CambiarEscenario(Escen);
-                switch (Escenario->ObtenerEstado()) {
-                case 1: 
-                    EstablecerCoolDown(0.2);
-                    EstablecerCoolLeft(0.2);
-                case 2:
-                    EstablecerCoolDown(0.7);
-                    EstablecerCoolLeft(0.7);
-                case 3:
-                    EstablecerCoolDown(0.5);
-                    EstablecerCoolLeft(0.5);
-                case 4:
-                    EstablecerCoolDown(FMath::RandRange(1, 10) * 0.1);
-                    EstablecerCoolLeft(FMath::RandRange(1, 10) * 0.1);
-                }
             }
             MoveDownFromLine(z);
-
+            Escenario->CambiarEscenario(Escen);
+            Puntos += 40;
+            PublicadorPuntos->EstablecerPuntos(Puntos);
+            GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Puntos: %d"), PublicadorPuntos->ObtenerPuntos()));
+            switch (Escenario->ObtenerEstado()) {
+            case 1:
+                EstablecerCoolDown(0.2);
+                EstablecerCoolLeft(0.2);
+            case 2:
+                EstablecerCoolDown(0.7);
+                EstablecerCoolLeft(0.7);
+            case 3:
+                EstablecerCoolDown(0.5);
+                EstablecerCoolLeft(0.5);
+            case 4:
+                EstablecerCoolDown(FMath::RandRange(1, 10) * 0.1);
+                EstablecerCoolLeft(FMath::RandRange(1, 10) * 0.1);
+            }
             /*if (LineRemoveSoundCue)
             {
                 UGameplayStatics::PlaySoundAtLocation(GetWorld(), LineRemoveSoundCue, GetActorLocation(), GetActorRotation());
@@ -350,6 +380,20 @@ void ABoard::SpawnearPiezas()
     CurrentPiece = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 5.0f, 195.0f), FRotator(0.0f, 0.0f, 0.0f));
     CurrentPiece->SetIndice(FMath::RandRange(0, 6));
     CurrentPiece->SpawnBlocks();
+    /*switch (FMath::RandRange(1, 3)) {
+    case 1:
+        NuevaPieza->EstablecerEstrategia(EstrategiaRoja);
+        break;
+    case 2:
+        NuevaPieza->EstablecerEstrategia(EstrategiaAmarilla);
+        break;
+    case 3:
+        NuevaPieza->EstablecerEstrategia(EstrategiaVerde);
+        break;
+    default:
+        break;
+    }
+    NuevaPieza->Mover();*/
 }
 
 bool ABoard::CheckGameOver()

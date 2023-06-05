@@ -11,18 +11,18 @@ AMovimientoRotacionAleatorios::AMovimientoRotacionAleatorios()
 	Tiempo = 0.0f;
 }
 
-void AMovimientoRotacionAleatorios::MovimientoLateral(float _Mx, float _My, float _Mz)
+void AMovimientoRotacionAleatorios::MovimientoLateral(float _Mx, float _My, float _Mz, AActor* actor)
 {
 	/*GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Movimiento Lateral"));*/
-	FVector NuevaPosicion = this->GetActorLocation() + FVector(FMath::RandRange(-_Mx, _Mx), FMath::RandRange(-_My, _My), FMath::RandRange(-_Mz, _Mz));
-	this->SetActorRelativeLocation(NuevaPosicion);
+	FVector NuevaPosicion = actor->GetActorLocation() + FVector(FMath::RandRange(-_Mx, _Mx), FMath::RandRange(-_My, _My), FMath::RandRange(-_Mz, _Mz));
+	actor->SetActorRelativeLocation(NuevaPosicion);
 }
 
-void AMovimientoRotacionAleatorios::MovimientoRotacion(float _Rx, float _Ry, float _Rz)
+void AMovimientoRotacionAleatorios::MovimientoRotacion(float _Rx, float _Ry, float _Rz, AActor* actor)
 {
 	/*GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Cyan, TEXT("Movimiento Rotacion"));*/
 	FRotator NuevaRotacion = FRotator(FMath::RandRange(-_Rx, _Rx), FMath::RandRange(-_Ry, _Ry), FMath::RandRange(-_Rz, _Rz));
-	this->SetActorRelativeRotation(NuevaRotacion);
+	actor->SetActorRelativeRotation(NuevaRotacion);
 }
 
 // Called when the game starts or when spawned

@@ -34,7 +34,7 @@ public:
 	virtual void CrearVida() override;
 	virtual void MoverAzar(float x, float y, float z) override;
 	virtual void Colorear(UMaterialInterface* Material) override;
-	virtual void MovimientoAzar(float x, float y, float z) override;
+	virtual void MovimientoAzar(float x, float y, float z, AActor* actor) override;
 	void EstablecerMovimiento(AActor* _Movimiento);
 private:
 	TArray<ABlock*> blocks;

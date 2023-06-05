@@ -17,7 +17,6 @@ ABlockBrilloso::ABlockBrilloso()
 void ABlockBrilloso::BeginPlay()
 {
 	Super::BeginPlay();
-	MostrarInformacion();
 }
 
 void ABlockBrilloso::Tick(float DeltaTime)

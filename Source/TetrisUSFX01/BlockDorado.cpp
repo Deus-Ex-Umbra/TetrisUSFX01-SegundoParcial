@@ -28,5 +28,4 @@ void ABlockDorado::MostrarInformacion()
 void ABlockDorado::BeginPlay()
 {
 	Super::BeginPlay();
-	MostrarInformacion();
 }
