@@ -39,8 +39,8 @@ public:
 	void EstablecerEstrategia(AActor* _Estrategia);
 	void Mover();
 	UPROPERTY(EditAnywhere)
-	TArray<class UMaterial*> Colors;
-
+	/*TArray<class UMaterial*> Colors;*/
+	class AMaterialesPiece* Materiales;
 private:
 	int Indice;
 	IPieceCaracteristicasEstrategia* Estrategia;

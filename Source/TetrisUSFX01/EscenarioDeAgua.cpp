@@ -42,7 +42,7 @@ void AEscenarioDeAgua::BeginPlay()
 {
 	Super::BeginPlay();
 	AAdaptadorCorazonMovimiento* Adaptador = GetWorld()->SpawnActor<AAdaptadorCorazonMovimiento>(AAdaptadorCorazonMovimiento::StaticClass());
-	CorazonAire = GetWorld()->SpawnActor<ACorazonAire>(FVector(0.0f, -150.0f, 75.0f), FRotator(0.0f, 0.0f, 0.0f));
+	CorazonAire = GetWorld()->SpawnActor<ACorazonAire>(FVector(0.0f, -150.0f, 145.0f), FRotator(0.0f, 0.0f, 0.0f));
 	CorazonAire->EstablecerMovimiento(Adaptador);
 	Director = GetWorld()->SpawnActor<ADirectorVida>(ADirectorVida::StaticClass());
 	CrearEscenario();

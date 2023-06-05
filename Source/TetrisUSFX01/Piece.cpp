@@ -5,6 +5,7 @@
 #include "Components/SceneComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "DrawDebugHelpers.h"
+#include "MaterialesPiece.h"
 #include <vector>
 //#include "BlockHijo02.h"
 
@@ -13,11 +14,10 @@ APiece::APiece()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
-	SceneComponent = CreateDefaultSubobject<USceneComponent>("Pieces Scene");
+	SceneComponent = CreateDefaultSubobject<USceneComponent>("PiecesScene");
 	RootComponent = SceneComponent;
 
-    struct FConstructorStatics
+    /*struct FConstructorStatics
     {
         ConstructorHelpers::FObjectFinderOptional<UMaterial> Color_0;
         ConstructorHelpers::FObjectFinderOptional<UMaterial> Color_1;
@@ -44,8 +44,7 @@ APiece::APiece()
     Colors.Add(ConstructorStatics.Color_3.Get());
     Colors.Add(ConstructorStatics.Color_4.Get());
     Colors.Add(ConstructorStatics.Color_5.Get());
-    Colors.Add(ConstructorStatics.Color_6.Get());
-
+    Colors.Add(ConstructorStatics.Color_6.Get());*/
 }
 
 // Called when the game starts or when spawned
@@ -53,6 +52,7 @@ void APiece::BeginPlay()
 {
 	Super::BeginPlay();
     /*SpawnBlocks();*/
+    Materiales = GetWorld()->SpawnActor<AMaterialesPiece>(AMaterialesPiece::StaticClass());
 }
 
 // Called every frame
@@ -97,8 +97,8 @@ void APiece::SpawnBlocks()
         else {
             B = GetWorld()->SpawnActor<ABlockDorado>(this->GetActorLocation(), Rotation);
         }
-        const int IndexC = FMath::RandRange(0, Colors.Num() - 1);
-        B->BlockMesh->SetMaterial(1, Colors[IndexC]);
+        /*const int IndexC = FMath::RandRange(0, Colors.Num() - 1);*/
+        B->BlockMesh->SetMaterial(1, /*Colors[IndexC]*/Materiales->ObtenerMaterial(FMath::RandRange(0, 12)));
         Blocks.Add(B);
         B->AttachToActor(this, FAttachmentTransformRules::KeepRelativeTransform);
         B->SetActorRelativeLocation(FVector(0.0, YZ.first, YZ.second));

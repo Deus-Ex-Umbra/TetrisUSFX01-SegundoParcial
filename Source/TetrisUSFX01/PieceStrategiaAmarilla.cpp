@@ -37,19 +37,19 @@ void APieceStrategiaAmarilla::Rotar(AActor* actor)
 
 void APieceStrategiaAmarilla::MoverIzquierdaDerecha(AActor* actor)
 {
-	FVector Posicion = FVector(0.0f, FMath::RandRange(-50, 50) + 105.0f, 175.0f);
+	FVector Posicion = actor->GetActorLocation() + FVector(0.0f, FMath::RandRange(-5, 5), 0.0f);
 	actor->SetActorLocation(Posicion);
 }
 
 void APieceStrategiaAmarilla::MoverAdelanteAtras(AActor* actor)
 {
-	FVector Posicion = FVector(FMath::RandRange(-50, 50), 105.0f, 175.0f);
+	FVector Posicion = actor->GetActorLocation() + FVector(FMath::RandRange(-5, 5), 0.0f, 0.0f);
 	actor->SetActorLocation(Posicion);
 }
 
 void APieceStrategiaAmarilla::MoverArribaAbajo(AActor* actor)
 {
-	FVector Posicion = FVector(0.0f, 105.0f, FMath::RandRange(-50, 50) + 175.0f);
+	FVector Posicion = actor->GetActorLocation() + FVector(0.0f, 0.0f, FMath::RandRange(-5, 5));
 	actor->SetActorLocation(Posicion);
 }
 

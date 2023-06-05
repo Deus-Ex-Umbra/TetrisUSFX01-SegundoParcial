@@ -42,7 +42,7 @@ void AEscenarioDeTierra::BeginPlay()
 	Super::BeginPlay();
 	AAdaptadorCorazonMovimiento* Adaptador = GetWorld()->SpawnActor<AAdaptadorCorazonMovimiento>(AAdaptadorCorazonMovimiento::StaticClass());
 	Director = GetWorld()->SpawnActor<ADirectorVida>(ADirectorVida::StaticClass());
-	CorazonFuego = GetWorld()->SpawnActor<ACorazonFuego>(FVector(0.0f, -125.0f, 125.0f), FRotator(0.0f, 0.0f, 0.0f));
+	CorazonFuego = GetWorld()->SpawnActor<ACorazonFuego>(FVector(0.0f, -150.0f, 145.0f), FRotator(0.0f, 0.0f, 0.0f));
 	CorazonFuego->EstablecerMovimiento(Adaptador);
 	CrearEscenario();
 	CorazonFuego->Colorear(LimitePiezasMaterial);

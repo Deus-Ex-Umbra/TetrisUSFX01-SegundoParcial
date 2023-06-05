@@ -28,7 +28,10 @@ public:
 	//Aquí se crea el ABoard y sus punteros
 	UPROPERTY()
 	APiece* CurrentPiece;
+	UPROPERTY()
 	APiece* NuevaPieza;
+	UPROPERTY()
+	APiece* NuevaNuevaPieza;
 	static ABoard* instancia; //Puntero a instancia (nullptr)
 	static ABoard* GetInstancia(); //Obtener instancia 
 	void Rotate(); 
@@ -63,6 +66,8 @@ public:
 		class APieceStrategiaAmarilla* EstrategiaAmarilla;
 	UPROPERTY()
 		class APieceEstrategiaVerde* EstrategiaVerde;
+	UPROPERTY()
+		class ANuevaNuevaPieceFachada* FachadaNuevaNuevaPiece;
 private:
 	enum PieceStatus { PS_NOT_INITED, PS_MOVING, PS_GOT_BOTTOM };
 	PieceStatus Status = PS_NOT_INITED;

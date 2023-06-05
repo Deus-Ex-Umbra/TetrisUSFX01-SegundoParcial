@@ -11,7 +11,7 @@ ATetrisUSFX01GameModeBase::ATetrisUSFX01GameModeBase() {
     // Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = true;
     /*DefaultPawnClass = ABoard::StaticClass();*/ //Se comenta esto para demostrar que ABoard se crea con el Singleton
-    siguientePosicionZ = 0;
+    tiempo = 0;
 }
 
 void ATetrisUSFX01GameModeBase::BeginPlay()
@@ -41,6 +41,16 @@ void ATetrisUSFX01GameModeBase::BeginPlay()
 void ATetrisUSFX01GameModeBase::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
+    /*if (tiempo >= 30.0f) {
+        UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
+        tiempo = 0;
+    }
+    tiempo += DeltaTime;*/
+}
+
+void ATetrisUSFX01GameModeBase::ReiniciarJuego()
+{
+    UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
 }
 
 void ATetrisUSFX01GameModeBase::DestroyActorFunction()

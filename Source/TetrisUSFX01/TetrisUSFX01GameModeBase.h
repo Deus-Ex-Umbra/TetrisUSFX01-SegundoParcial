@@ -25,7 +25,8 @@ public:
 		void DestroyActorFunction();
 
 	virtual void Tick(float DeltaTime) override;
+	void ReiniciarJuego();
 private:
-	float siguientePosicionZ;
+	float tiempo;
 
 };

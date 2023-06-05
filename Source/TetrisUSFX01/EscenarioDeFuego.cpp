@@ -33,6 +33,8 @@ AEscenarioDeFuego::AEscenarioDeFuego()
 		LimitePiezasMesh->SetStaticMesh(LMesh.Object);
 		LimitePiezasMesh->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
 	}
+	/*if (FMath::RandRange(-1000, 1000) == 456) EscenarioMaterial = LoadObject<UMaterialInterface>(nullptr, TEXT("Material'/Game/Mesh/IngenieroSol_Mat.IngenieroSol_Mat'"));
+	else EscenarioMaterial = LoadObject<UMaterialInterface>(nullptr, TEXT("Material'/Game/Mesh/FuegoYAgua_Mat.FuegoYAgua_Mat'"));*/
 	EscenarioMaterial = LoadObject<UMaterialInterface>(nullptr, TEXT("Material'/Game/Mesh/FuegoYAgua_Mat.FuegoYAgua_Mat'"));
 	LimitePiezasMaterial = LoadObject<UMaterialInterface>(nullptr, TEXT("Material'/Game/Mesh/EscenarioFuego_Mat.EscenarioFuego_Mat'"));
 	Tiempo = 0.0f;
@@ -43,7 +45,7 @@ void AEscenarioDeFuego::BeginPlay()
 	Super::BeginPlay();
 	AAdaptadorCorazonMovimiento* Adaptador = GetWorld()->SpawnActor<AAdaptadorCorazonMovimiento>(AAdaptadorCorazonMovimiento::StaticClass());
 	Director = GetWorld()->SpawnActor<ADirectorVida>(ADirectorVida::StaticClass());
-	CorazonFuego = GetWorld()->SpawnActor<ACorazonFuego>(FVector(0.0f, -125.0f, 125.0f), FRotator(0.0f, 0.0f, 0.0f));
+	CorazonFuego = GetWorld()->SpawnActor<ACorazonFuego>(FVector(0.0f, -150.0f, 145.0f), FRotator(0.0f, 0.0f, 0.0f));
 	CorazonFuego->EstablecerMovimiento(Adaptador);
 	CrearEscenario();
 	CorazonFuego->Colorear(LimitePiezasMaterial);

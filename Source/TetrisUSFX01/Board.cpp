@@ -19,6 +19,7 @@
 #include "BlockObservador.h"
 #include "PieceStrategiaRoja.h"
 #include "PieceStrategiaAmarilla.h"
+#include "NuevaNuevaPieceFachada.h"
 #include "PieceEstrategiaVerde.h"
 ABoard::ABoard()
 {
@@ -96,6 +97,7 @@ void ABoard::Tick(float DeltaTime)
         /*NuevaPieza->Dismiss();
         NuevaPieza->Destroy();*/
         NuevaPieza->EliminarPieza();
+        FachadaNuevaNuevaPiece->EliminarPiece();
         /*CoolLeft -= DeltaTime;*/
         EstablecerCoolLeft(ObtenerCoolLeft() - DeltaTime);
         if (CoolLeft <= 0.0f)
@@ -191,25 +193,36 @@ void ABoard::NewPiece()
     if (NuevaPieza) {
         NuevaPieza->Dismiss();
         NuevaPieza->Destroy();
-    }
+    };
+    int AntiguoAntiguoIndice = FachadaNuevaNuevaPiece->ObtenerIndice();
     NuevaPieza = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 105.0f, 175.0f), FRotator(0.0f, 0.0f, 0.0f));
-    NuevaPieza->SetIndice(FMath::RandRange(0, 6));
+    NuevaPieza->SetIndice(AntiguoAntiguoIndice);
     NuevaPieza->SpawnBlocks();
+    if (NuevaNuevaPieza) {
+        NuevaNuevaPieza->Dismiss();
+        NuevaNuevaPieza->Destroy();
+    }
+    FachadaNuevaNuevaPiece = GetWorld()->SpawnActor<ANuevaNuevaPieceFachada>(FVector(0.0f, 105.0f, 175.0f), FRotator(0.0f, 0.0f, 0.0f));
+    NuevaNuevaPieza = FachadaNuevaNuevaPiece->ObtenerPiece();
     bGameOver = CheckGameOver();
     switch (FMath::RandRange(1, 3)) {
     case 1:
         NuevaPieza->EstablecerEstrategia(EstrategiaRoja);
+        NuevaNuevaPieza->EstablecerEstrategia(EstrategiaRoja);
         break;
     case 2:
         NuevaPieza->EstablecerEstrategia(EstrategiaAmarilla);
+        NuevaNuevaPieza->EstablecerEstrategia(EstrategiaAmarilla);
         break;
     case 3:
         NuevaPieza->EstablecerEstrategia(EstrategiaVerde);
+        NuevaNuevaPieza->EstablecerEstrategia(EstrategiaVerde);
         break;
     default:
         break;
     }
     NuevaPieza->Mover();
+    FachadaNuevaNuevaPiece->MoverPiece();
     if (bGameOver)
     {
         UE_LOG(LogTemp, Warning, TEXT("Game Over!!!!!!!!"));
@@ -351,6 +364,9 @@ float ABoard::ObtenerCoolLeft()
 void ABoard::EstablecerGameOver(bool _bGameOver)
 {
     bGameOver = _bGameOver;
+    /*if (bGameOver) {
+        UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
+    }*/
 }
 
 bool ABoard::ObtenerGameOver()
@@ -374,6 +390,9 @@ bool ABoard::ObtenerGameOver()
 
 void ABoard::SpawnearPiezas()
 {
+    FachadaNuevaNuevaPiece = GetWorld()->SpawnActor<ANuevaNuevaPieceFachada>(FVector(0.0f, 105.0f, 175.0f), FRotator(0.0f, 0.0f, 0.0f));
+    /*NuevaNuevaPieza->SetIndice(FachadaNuevaNuevaPiece->ObtenerIndice());*/
+    NuevaNuevaPieza = FachadaNuevaNuevaPiece->ObtenerPiece();
     NuevaPieza = GetWorld()->SpawnActor<APiece>(FVector(0.0f, 105.0f, 175.0f), FRotator(0.0f, 0.0f, 0.0f));
     NuevaPieza->SetIndice(FMath::RandRange(0, 6));
     NuevaPieza->SpawnBlocks();
@@ -402,6 +421,7 @@ bool ABoard::CheckGameOver()
     {
         UE_LOG(LogTemp, Warning, TEXT("NoPieces"));
         EstablecerGameOver(true);
+        UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
         return true;
     }
     return CurrentPiece->CheckWillCollision([](FVector OldVector) { return OldVector; });
